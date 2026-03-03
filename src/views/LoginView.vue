@@ -35,7 +35,7 @@ function fillTestCredentials() {
         <div class="text-center mb-8">
           <span class="text-5xl block mb-3">🍔</span>
           <h1 class="text-2xl font-extrabold text-text dark:text-text-dark">Welcome Back!</h1>
-          <p class="text-text-muted dark:text-text-muted-dark mt-1">Sign in to Food City</p>
+          <p class="text-text-muted dark:text-text-muted-dark mt-1">Sign in to RA MARKETING STORE</p>
         </div>
 
         <!-- Error message -->

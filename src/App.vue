@@ -19,9 +19,9 @@ useThemeStore()
     <!-- Footer -->
     <footer class="border-t border-border dark:border-border-dark py-8 mt-16">
       <div class="max-w-7xl mx-auto px-4 text-center">
-        <p class="text-lg font-bold text-primary mb-2">🍔 Food City</p>
+        <p class="text-lg font-bold text-primary mb-2"> RA MARKETING STORE</p>
         <p class="text-text-muted dark:text-text-muted-dark text-sm">
-          &copy; 2026 Food City. Built with Vue 3, TypeScript &amp; Tailwind CSS.
+          &copy; 2026 RA MARKETING STORE. Built with Vue 3, TypeScript &amp; Tailwind CSS.
         </p>
         <p class="text-text-muted dark:text-text-muted-dark text-xs mt-1">
           Data powered by <a href="https://dummyjson.com" target="_blank" class="text-primary hover:underline">DummyJSON.com</a>

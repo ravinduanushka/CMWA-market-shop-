@@ -72,9 +72,8 @@ onMounted(() => {
         <div class="text-center max-w-3xl mx-auto">
           <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4">
             <span class="bg-gradient-to-r from-primary via-accent to-primary-dark bg-clip-text text-transparent">
-              Welcome to Food City
+              WELCOME TO RA MARKETING STORE
             </span>
-            <span class="block text-3xl sm:text-4xl mt-2">🍕🍔🌮🍩🥗</span>
           </h1>
           <p class="text-lg sm:text-xl text-text-muted dark:text-text-muted-dark max-w-2xl mx-auto">
             Discover amazing products, grab delicious deals, and enjoy the best shopping experience in town!

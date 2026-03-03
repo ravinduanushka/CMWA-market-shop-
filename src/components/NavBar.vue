@@ -20,9 +20,9 @@ function toggleMobileMenu() {
       <div class="flex items-center justify-between h-16">
         <!-- Logo -->
         <RouterLink to="/" class="flex items-center gap-2 group">
-          <span class="text-3xl group-hover:animate-bounce">🍔</span>
+          <span class="text-3xl group-hover:animate-bounce">🛒</span>
           <span class="text-xl font-extrabold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-            Food City
+            RA MARKETING STORE
           </span>
         </RouterLink>
 
