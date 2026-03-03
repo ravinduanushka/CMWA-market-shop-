@@ -67,22 +67,26 @@ onMounted(() => {
 <template>
   <div>
     <!-- Hero Section -->
-    <section class="relative overflow-hidden bg-gradient-to-br from-primary/10 via-accent/5 to-transparent dark:from-primary/5 dark:via-accent/5 dark:to-transparent">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+    <section class="relative overflow-hidden bg-gradient-to-br from-orange-600 via-amber-500 to-yellow-400 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+      <!-- Pattern overlay -->
+      <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size: 30px 30px;"></div>
+      <!-- Glow effects -->
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-white/20 dark:bg-primary/20 rounded-full blur-[100px]"></div>
+      <div class="absolute -bottom-20 -left-20 w-80 h-80 bg-yellow-300/30 dark:bg-primary/10 rounded-full blur-3xl"></div>
+      <div class="absolute -top-10 -right-10 w-60 h-60 bg-orange-300/30 dark:bg-accent/10 rounded-full blur-3xl"></div>
+
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
         <div class="text-center max-w-3xl mx-auto">
           <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4">
-            <span class="bg-gradient-to-r from-primary via-accent to-primary-dark bg-clip-text text-transparent">
+            <span class="text-white dark:bg-gradient-to-r dark:from-primary dark:via-accent dark:to-primary-dark dark:bg-clip-text dark:text-transparent drop-shadow-lg">
               WELCOME TO RA MARKETING STORE
             </span>
           </h1>
-          <p class="text-lg sm:text-xl text-text-muted dark:text-text-muted-dark max-w-2xl mx-auto">
+          <p class="text-lg sm:text-xl text-white/80 dark:text-text-muted-dark max-w-2xl mx-auto">
             Discover amazing products, grab delicious deals, and enjoy the best shopping experience in town!
           </p>
         </div>
       </div>
-      <!-- Decorative blob -->
-      <div class="absolute -top-24 -right-24 w-72 h-72 bg-primary/10 dark:bg-primary/5 rounded-full blur-3xl"></div>
-      <div class="absolute -bottom-16 -left-16 w-64 h-64 bg-accent/10 dark:bg-accent/5 rounded-full blur-3xl"></div>
     </section>
 
     <!-- Main Content -->
