@@ -67,15 +67,17 @@ onMounted(() => {
 <template>
   <div>
     <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-orange-600 to-amber-500 dark:from-gray-900 dark:to-gray-800">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+    <section class="relative bg-gray-900">
+      <img src="/hero-bg.png" alt="" class="absolute inset-0 w-full h-full object-cover opacity-60" />
+      <div class="absolute inset-0 bg-black/40"></div>
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
         <div class="text-center max-w-3xl mx-auto">
           <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4">
-            <span class="text-white dark:text-primary">
+            <span class="text-white">
               WELCOME TO RA MARKETING STORE
             </span>
           </h1>
-          <p class="text-lg sm:text-xl text-white/80 dark:text-text-muted-dark max-w-2xl mx-auto">
+          <p class="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto">
             Discover amazing products, grab delicious deals, and enjoy the best shopping experience in town!
           </p>
         </div>
