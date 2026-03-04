@@ -17,7 +17,7 @@ const cartStore = useCartStore()
     <!-- Badge -->
     <span
       v-if="cartStore.totalItems > 0"
-      class="absolute -top-0.5 -right-0.5 min-w-[20px] h-5 flex items-center justify-center px-1.5 rounded-full bg-primary text-white text-xs font-bold animate-bounce"
+      class="absolute -top-0.5 -right-0.5 min-w-[20px] h-5 flex items-center justify-center px-1.5 rounded-full bg-primary text-white text-xs font-bold"
     >
       {{ cartStore.totalItems > 99 ? '99+' : cartStore.totalItems }}
     </span>

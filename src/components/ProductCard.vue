@@ -26,14 +26,14 @@ function handleAddToCart(event: Event) {
 <template>
   <RouterLink
     :to="`/product/${product.id}`"
-    class="group block rounded-2xl overflow-hidden bg-surface-card dark:bg-surface-card-dark border border-border dark:border-border-dark hover:shadow-xl hover:shadow-primary/10 dark:hover:shadow-primary/5 transition-all duration-300 hover:-translate-y-1"
+    class="group block rounded-2xl overflow-hidden bg-surface-card dark:bg-surface-card-dark border border-border dark:border-border-dark hover:shadow-md transition-shadow duration-300"
   >
     <!-- Image -->
     <div class="relative aspect-square overflow-hidden bg-border/20 dark:bg-border-dark/20">
       <img
         :src="product.thumbnail"
         :alt="product.title"
-        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
         loading="lazy"
       />
       <!-- Discount badge -->

@@ -21,10 +21,10 @@ useThemeStore()
       <div class="max-w-7xl mx-auto px-4 text-center">
         <p class="text-lg font-bold text-primary mb-2"> RA MARKETING STORE</p>
         <p class="text-text-muted dark:text-text-muted-dark text-sm">
-          &copy; 2026 RA MARKETING STORE. Built with Vue 3, TypeScript &amp; Tailwind CSS.
+          &copy; 2026 RA MARKETING STORE. All rights reserved.
         </p>
-        <p class="text-text-muted dark:text-text-muted-dark text-xs mt-1">
-          Data powered by <a href="https://dummyjson.com" target="_blank" class="text-primary hover:underline">DummyJSON.com</a>
+        <p class="text-text-muted dark:text-text-muted-dark text-sm mt-1">
+          📧 info@ramarketingstore.com &nbsp;|&nbsp; 📞 +94 77 123 4567
         </p>
       </div>
     </footer>

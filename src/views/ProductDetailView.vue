@@ -186,7 +186,7 @@ onMounted(async () => {
               ? 'bg-green-500 text-white shadow-lg shadow-green-500/25'
               : product.stock === 0
                 ? 'bg-border dark:bg-border-dark text-text-muted dark:text-text-muted-dark cursor-not-allowed'
-                : 'bg-primary text-white hover:bg-primary-dark hover:shadow-xl hover:shadow-primary/25 active:scale-95'
+                : 'bg-primary text-white hover:bg-primary-dark'
           ]"
         >
           <span v-if="addedToCart" class="flex items-center justify-center gap-2">

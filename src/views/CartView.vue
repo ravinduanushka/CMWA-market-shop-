@@ -116,7 +116,7 @@ function getDiscountedPrice(price: number, discount: number): number {
           </div>
         </div>
         <button
-          class="w-full py-4 rounded-2xl bg-primary text-white font-bold text-lg hover:bg-primary-dark transition-all duration-200 hover:shadow-xl hover:shadow-primary/25 active:scale-[0.98] cursor-pointer"
+          class="w-full py-4 rounded-2xl bg-primary text-white font-bold text-lg hover:bg-primary-dark transition-colors duration-200 cursor-pointer"
         >
           Proceed to Checkout 🎉
         </button>

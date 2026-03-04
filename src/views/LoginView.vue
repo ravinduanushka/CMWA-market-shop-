@@ -30,7 +30,7 @@ function fillTestCredentials() {
   <div class="min-h-[80vh] flex items-center justify-center px-4 py-8">
     <div class="w-full max-w-md">
       <!-- Card -->
-      <div class="rounded-3xl bg-surface-card dark:bg-surface-card-dark border border-border dark:border-border-dark shadow-xl shadow-primary/5 dark:shadow-primary/5 p-8">
+      <div class="rounded-3xl bg-surface-card dark:bg-surface-card-dark border border-border dark:border-border-dark shadow-md p-8">
         <!-- Header -->
         <div class="text-center mb-8">
           <span class="text-5xl block mb-3">🍔</span>
@@ -112,7 +112,7 @@ function fillTestCredentials() {
           <button
             type="submit"
             :disabled="authStore.loading"
-            class="w-full py-3.5 rounded-xl bg-primary text-white font-bold text-lg hover:bg-primary-dark transition-all duration-200 hover:shadow-lg hover:shadow-primary/25 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
+            class="w-full py-3.5 rounded-xl bg-primary text-white font-bold text-lg hover:bg-primary-dark transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
           >
             <span v-if="authStore.loading" class="flex items-center justify-center gap-2">
               <svg class="animate-spin w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
