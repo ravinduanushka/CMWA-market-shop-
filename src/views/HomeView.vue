@@ -119,7 +119,8 @@ onMounted(() => {
       <div v-else-if="error" class="text-center py-16">
         <p class="text-5xl mb-4">😞</p>
         <p class="text-xl font-semibold text-text dark:text-text-dark mb-2">Oops! Something went wrong</p>
-        <p class="text-text-muted dark:text-text-muted-dark mb-4">{{ error }}</p>
+        <p class="text-text-muted dark:text-text-muted-dark mb-2">{{ error }}</p>
+        <p class="text-sm text-text-muted dark:text-text-muted-dark mb-6">Please check your internet connection and try again.</p>
         <button
           @click="loadProducts()"
           class="px-6 py-3 rounded-full bg-primary text-white font-medium hover:bg-primary-dark transition-colors cursor-pointer"
