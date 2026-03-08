@@ -19,12 +19,12 @@ useThemeStore()
     <!-- Footer -->
     <footer class="border-t border-border dark:border-border-dark py-8 mt-16">
       <div class="max-w-7xl mx-auto px-4 text-center">
-        <p class="text-lg font-bold text-primary mb-2"> RA MARKETING STORE</p>
+        <p class="text-lg font-bold text-primary mb-2"> CMWA MARKETING STORE</p>
         <p class="text-text-muted dark:text-text-muted-dark text-sm">
-          &copy; 2026 RA MARKETING STORE. All rights reserved.
+          &copy; 2026 CMWA MARKETING STORE. All rights reserved.
         </p>
         <p class="text-text-muted dark:text-text-muted-dark text-sm mt-1">
-          📧 info@ramarketingstore.com &nbsp;|&nbsp; 📞 +94 77 123 4567
+          📧 info@CMWAmarketingstore.com &nbsp;|&nbsp; 📞 +94 77 123 4567
         </p>
       </div>
     </footer>

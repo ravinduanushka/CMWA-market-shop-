@@ -22,7 +22,7 @@ function toggleMobileMenu() {
         <RouterLink to="/" class="flex items-center gap-2 group">
           <span class="text-3xl">🛒</span>
           <span class="text-xl font-extrabold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-            RA MARKETING STORE
+            CMWA MARKETING STORE
           </span>
         </RouterLink>
 
