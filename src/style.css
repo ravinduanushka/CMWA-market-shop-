@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
-/* Enable class-based dark mode (toggle via .dark on <html>) */
+
 @variant dark (&:where(.dark, .dark *));
 
 /* Custom theme tokens */
