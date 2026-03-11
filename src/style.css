@@ -4,7 +4,7 @@
 
 @variant dark (&:where(.dark, .dark *));
 
-/* Custom theme tokens */
+
 @theme {
   --color-primary: #c2884d;
   --color-primary-dark: #a3703d;

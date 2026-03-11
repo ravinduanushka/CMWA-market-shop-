@@ -10,7 +10,7 @@ const themeStore = useThemeStore()
     class="p-2 rounded-xl hover:bg-border/50 dark:hover:bg-border-dark/50 transition-all duration-200 cursor-pointer"
     :title="themeStore.isDark ? 'Switch to light mode' : 'Switch to dark mode'"
   >
-    <!-- Sun icon for dark mode (click to switch to light) -->
+    
     <svg
       v-if="themeStore.isDark"
       xmlns="http://www.w3.org/2000/svg"
