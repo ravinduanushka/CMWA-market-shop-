@@ -2,7 +2,7 @@
 import NavBar from './components/NavBar.vue'
 import { useThemeStore } from './stores/theme'
 
-// Initialize theme store so dark class is applied on load
+
 useThemeStore()
 </script>
 
