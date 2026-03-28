@@ -74,7 +74,7 @@ onMounted(() => {
         <div class="text-center max-w-3xl mx-auto">
           <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4">
             <span class="text-white">
-              WELCOME TO RA MARKETING STORE
+              WELCOME TO CMWA MARKETING STORE
             </span>
           </h1>
           <p class="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto">
