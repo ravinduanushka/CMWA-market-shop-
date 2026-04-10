@@ -22,7 +22,7 @@ export interface ProductsResponse {
     limit: number
 }
 
-/** A single category returned from the categories endpoint */
+
 export interface CategoryInfo {
     slug: string
     name: string
