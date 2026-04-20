@@ -1,4 +1,4 @@
-import type { Product, ProductsResponse, CategoryInfo, AuthResponse, LoginCredentials } from '../types'
+import type { Product, ProductsResponse, CategoryInfo, AuthResponse, LoginCredentials, RegistrationData } from '../types'
 
 const BASE_URL = 'https://dummyjson.com'
 
@@ -96,4 +96,26 @@ export async function loginUser(credentials: LoginCredentials): Promise<AuthResp
     }
     const data: AuthResponse = await response.json()
     return data
+}
+
+/**
+ * Register a new user using DummyJSON "Add user" endpoint
+ */
+export async function registerUser(data: RegistrationData): Promise<AuthResponse> {
+    const response = await fetchWithRetry(`${BASE_URL}/users/add`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+    }, 1)
+    if (!response.ok) {
+        throw new Error('Registration failed')
+    }
+    const result = await response.json()
+    // Mock tokens and default avatar as DummyJSON users/add doesn't return them
+    return {
+        ...result,
+        image: result.image || `https://robohash.org/${result.username}?set=set4`,
+        accessToken: 'mock-access-token-' + result.id,
+        refreshToken: 'mock-refresh-token-' + result.id,
+    }
 }

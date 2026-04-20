@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
-import type { AuthUser, LoginCredentials } from '../types'
-import { loginUser } from '../api/dummyjson'
+import type { AuthUser, LoginCredentials, RegistrationData } from '../types'
+import { loginUser, registerUser } from '../api/dummyjson'
 
 export const useAuthStore = defineStore('auth', () => {
     // Load user from localStorage
@@ -40,6 +40,31 @@ export const useAuthStore = defineStore('auth', () => {
         }
     }
 
+    async function register(registrationData: RegistrationData): Promise<boolean> {
+        loading.value = true
+        error.value = null
+        try {
+            const data = await registerUser(registrationData)
+            user.value = {
+                id: data.id,
+                username: data.username,
+                email: data.email,
+                firstName: data.firstName,
+                lastName: data.lastName,
+                image: data.image,
+                accessToken: data.accessToken,
+                refreshToken: data.refreshToken,
+            }
+            localStorage.setItem('food-city-user', JSON.stringify(user.value))
+            return true
+        } catch (e) {
+            error.value = e instanceof Error ? e.message : 'Registration failed'
+            return false
+        } finally {
+            loading.value = false
+        }
+    }
+
     function logout() {
         user.value = null
         localStorage.removeItem('food-city-user')
@@ -52,6 +77,7 @@ export const useAuthStore = defineStore('auth', () => {
         isLoggedIn,
         displayName,
         login,
+        register,
         logout,
     }
 })

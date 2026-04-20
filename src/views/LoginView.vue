@@ -1,11 +1,17 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { useAuthStore } from '../stores/auth'
 import type { LoginCredentials } from '../types'
 
 const router = useRouter()
 const authStore = useAuthStore()
+
+onMounted(() => {
+  if (authStore.isLoggedIn) {
+    router.push('/')
+  }
+})
 
 const credentials = ref<LoginCredentials>({
   username: '',
@@ -20,10 +26,6 @@ async function handleLogin() {
   }
 }
 
-function fillTestCredentials() {
-  credentials.value.username = 'emilys'
-  credentials.value.password = 'emilyspass'
-}
 </script>
 
 <template>
@@ -129,17 +131,18 @@ function fillTestCredentials() {
           </button>
         </form>
 
-        <!-- Test credentials helper -->
-        <div class="mt-6 p-4 rounded-xl bg-primary/5 dark:bg-primary/10 border border-primary/20">
-          <p class="text-xs text-text-muted dark:text-text-muted-dark mb-2">
-            💡 <strong>Demo mode:</strong> Use DummyJSON test credentials
+
+        <!-- Register link -->
+        <div class="mt-6 text-center">
+          <p class="text-sm text-text-muted dark:text-text-muted-dark">
+            Don't have an account?
+            <router-link
+              to="/register"
+              class="font-semibold text-primary hover:text-primary-dark transition-colors ml-1"
+            >
+              Register Now
+            </router-link>
           </p>
-          <button
-            @click="fillTestCredentials"
-            class="text-xs font-medium text-primary hover:text-primary-dark transition-colors cursor-pointer"
-          >
-            Click here to auto-fill test credentials →
-          </button>
         </div>
       </div>
     </div>

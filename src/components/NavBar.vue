@@ -52,14 +52,21 @@ function toggleMobileMenu() {
               Logout
             </button>
           </template>
-          <RouterLink
-            v-else
-            to="/login"
-            class="flex items-center gap-1.5 px-4 py-2 rounded-full bg-primary text-white font-medium text-sm hover:bg-primary-dark transition-colors duration-200"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
-            Login
-          </RouterLink>
+          <div v-else class="flex items-center gap-3">
+            <RouterLink
+              to="/register"
+              class="text-sm font-medium text-text-muted dark:text-text-muted-dark hover:text-primary transition-colors cursor-pointer"
+            >
+              Register
+            </RouterLink>
+            <RouterLink
+              to="/login"
+              class="flex items-center gap-1.5 px-4 py-2 rounded-full bg-primary text-white font-medium text-sm hover:bg-primary-dark transition-colors duration-200"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+              Login
+            </RouterLink>
+          </div>
         </div>
 
         <!-- Mobile hamburger -->

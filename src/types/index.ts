@@ -43,13 +43,22 @@ export interface AuthUser {
     firstName: string
     lastName: string
     image: string
-    accessToken: string
-    refreshToken: string
+    accessToken?: string
+    refreshToken?: string
 }
 
 /** Login request payload */
 export interface LoginCredentials {
     username: string
+    password: string
+}
+
+/** Registration request payload */
+export interface RegistrationData {
+    firstName: string
+    lastName: string
+    username: string
+    email: string
     password: string
 }
 
