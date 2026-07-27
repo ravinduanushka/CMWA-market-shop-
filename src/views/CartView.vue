@@ -153,13 +153,21 @@ function finishOrder() {
           </div>
         </div>
         
-        <!-- Proceed to Checkout Button -->
-        <button
-          @click="openPaymentModal"
-          class="w-full py-4 rounded-2xl bg-primary text-white font-bold text-lg hover:bg-primary-dark shadow-lg shadow-primary/25 hover:shadow-xl transition-all duration-200 cursor-pointer active:scale-98"
-        >
-          Proceed to Checkout 
-        </button>
+        <!-- Payment Method Page Buttons -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <RouterLink
+            to="/checkout/cod"
+            class="py-3.5 px-4 rounded-2xl bg-surface dark:bg-surface-dark hover:bg-primary/10 border-2 border-primary/40 text-primary font-bold text-sm text-center transition-all duration-200 flex items-center justify-center gap-2 shadow-sm cursor-pointer"
+          >
+            💵 Cash on Delivery
+          </RouterLink>
+          <RouterLink
+            to="/checkout/online"
+            class="py-3.5 px-4 rounded-2xl bg-primary text-white font-bold text-sm text-center hover:bg-primary-dark shadow-md shadow-primary/25 transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer"
+          >
+            💳 Online Card Payment
+          </RouterLink>
+        </div>
 
         <div class="flex justify-between mt-4">
           <RouterLink

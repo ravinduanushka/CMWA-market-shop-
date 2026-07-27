@@ -29,6 +29,20 @@ const routes: RouteRecordRaw[] = [
         name: 'register',
         component: () => import('../views/RegisterView.vue'),
     },
+    {
+        path: '/checkout',
+        redirect: '/checkout/cod',
+    },
+    {
+        path: '/checkout/cod',
+        name: 'checkout-cod',
+        component: () => import('../views/CheckoutCodView.vue'),
+    },
+    {
+        path: '/checkout/online',
+        name: 'checkout-online',
+        component: () => import('../views/CheckoutOnlineView.vue'),
+    },
 ]
 
 const router = createRouter({
