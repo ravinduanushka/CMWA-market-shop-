@@ -79,10 +79,10 @@ function handleAddToCart(event: Event) {
   >
     <RouterLink
       :to="`/product/${product.id}`"
-      class="group block h-full rounded-2xl overflow-hidden bg-surface-card dark:bg-surface-card-dark border border-border dark:border-border-dark hover:border-primary/50 dark:hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1.5 transition-all duration-300"
+      class="group block h-full rounded-2xl overflow-hidden bg-surface-card dark:bg-surface-card-dark border-2 border-primary/20 dark:border-border-dark shadow-md hover:border-primary/60 dark:hover:border-primary/60 hover:shadow-xl hover:shadow-primary/15 hover:-translate-y-1.5 transition-all duration-300"
     >
       <!-- Image -->
-      <div class="relative aspect-square overflow-hidden bg-border/20 dark:bg-border-dark/20">
+      <div class="relative aspect-square overflow-hidden bg-slate-50/90 dark:bg-border-dark/30 border-b border-border/60 dark:border-border-dark/60">
         <img
           :src="product.thumbnail"
           :alt="product.title"
@@ -97,7 +97,7 @@ function handleAddToCart(event: Event) {
           -{{ Math.round(product.discountPercentage) }}%
         </div>
         <!-- Rating badge -->
-        <div class="absolute top-3 right-3 px-2 py-1 rounded-full bg-surface/90 dark:bg-surface-dark/90 backdrop-blur-sm text-xs font-semibold flex items-center gap-1">
+        <div class="absolute top-3 right-3 px-2 py-1 rounded-full bg-surface-card/90 dark:bg-surface-dark/90 backdrop-blur-sm text-xs font-semibold flex items-center gap-1 border border-border/50 dark:border-border-dark/50 shadow-sm">
           <span class="text-amber-500">★</span>
           <span class="text-text dark:text-text-dark">{{ product.rating.toFixed(1) }}</span>
         </div>

@@ -12,13 +12,13 @@
   --color-accent: #b8943e;
   --color-surface: #f7e7ce;
   --color-surface-dark: #1e1e2e;
-  --color-surface-card: #fdf5e8;
+  --color-surface-card: #ffffff;
   --color-surface-card-dark: #2a2a3e;
   --color-text: #1e293b;
   --color-text-dark: #e2e8f0;
   --color-text-muted: #64748b;
   --color-text-muted-dark: #94a3b8;
-  --color-border: #ebd9be;
+  --color-border: #e6d3ba;
   --color-border-dark: #3b3b52;
   --font-family-sans: 'Inter', sans-serif;
 }
