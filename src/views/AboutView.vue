@@ -99,11 +99,8 @@ onUnmounted(() => {
       ]"
     >
       <div class="rounded-3xl bg-surface-card dark:bg-surface-card-dark border-2 border-primary/40 dark:border-border-dark shadow-xl p-6 sm:p-10">
-        <div class="flex items-center gap-3 mb-8 border-b border-border dark:border-border-dark pb-4">
-          <span class="text-3xl">📞</span>
-          <div>
-            <h2 class="text-2xl sm:text-3xl font-extrabold text-text dark:text-text-dark">Contact Us</h2>
-          </div>
+        <div class="mb-8 border-b border-border dark:border-border-dark pb-4">
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-text dark:text-text-dark">Contact Us</h2>
         </div>
 
         <!-- Contact Details Grid -->
@@ -111,11 +108,8 @@ onUnmounted(() => {
           <!-- Email Box -->
           <a
             href="mailto:info@CMWAmarketingstore.com"
-            class="group p-5 rounded-2xl bg-surface-card dark:bg-surface-card-dark border-2 border-primary/30 dark:border-border-dark hover:border-primary transition-all duration-200 shadow-sm hover:shadow-md flex items-start gap-4"
+            class="group p-5 rounded-2xl bg-surface-card dark:bg-surface-card-dark border-2 border-primary/30 dark:border-border-dark hover:border-primary transition-all duration-200 shadow-sm hover:shadow-md block"
           >
-            <div class="p-3.5 rounded-xl bg-primary/10 dark:bg-primary/20 text-primary text-2xl group-hover:scale-110 transition-transform">
-              📧
-            </div>
             <div>
               <p class="text-xs font-semibold text-text-muted dark:text-text-muted-dark uppercase tracking-wider mb-1">Email Us</p>
               <p class="font-bold text-text dark:text-text-dark group-hover:text-primary transition-colors text-sm sm:text-base break-all">
@@ -127,11 +121,8 @@ onUnmounted(() => {
           <!-- Phone Box -->
           <a
             href="tel:+94771234567"
-            class="group p-5 rounded-2xl bg-surface-card dark:bg-surface-card-dark border-2 border-primary/30 dark:border-border-dark hover:border-primary transition-all duration-200 shadow-sm hover:shadow-md flex items-start gap-4"
+            class="group p-5 rounded-2xl bg-surface-card dark:bg-surface-card-dark border-2 border-primary/30 dark:border-border-dark hover:border-primary transition-all duration-200 shadow-sm hover:shadow-md block"
           >
-            <div class="p-3.5 rounded-xl bg-primary/10 dark:bg-primary/20 text-primary text-2xl group-hover:scale-110 transition-transform">
-              📞
-            </div>
             <div>
               <p class="text-xs font-semibold text-text-muted dark:text-text-muted-dark uppercase tracking-wider mb-1">Call Us</p>
               <p class="font-bold text-text dark:text-text-dark group-hover:text-primary transition-colors text-sm sm:text-base">
@@ -141,10 +132,7 @@ onUnmounted(() => {
           </a>
 
           <!-- Location Box -->
-          <div class="p-5 rounded-2xl bg-surface-card dark:bg-surface-card-dark border-2 border-primary/30 dark:border-border-dark shadow-sm flex items-start gap-4">
-            <div class="p-3.5 rounded-xl bg-primary/10 dark:bg-primary/20 text-primary text-2xl">
-              📍
-            </div>
+          <div class="p-5 rounded-2xl bg-surface-card dark:bg-surface-card-dark border-2 border-primary/30 dark:border-border-dark shadow-sm block">
             <div>
               <p class="text-xs font-semibold text-text-muted dark:text-text-muted-dark uppercase tracking-wider mb-1">Store Address</p>
               <p class="font-bold text-text dark:text-text-dark text-sm sm:text-base">
@@ -154,10 +142,7 @@ onUnmounted(() => {
           </div>
 
           <!-- Hours Box -->
-          <div class="p-5 rounded-2xl bg-surface-card dark:bg-surface-card-dark border-2 border-primary/30 dark:border-border-dark shadow-sm flex items-start gap-4">
-            <div class="p-3.5 rounded-xl bg-primary/10 dark:bg-primary/20 text-primary text-2xl">
-              🕒
-            </div>
+          <div class="p-5 rounded-2xl bg-surface-card dark:bg-surface-card-dark border-2 border-primary/30 dark:border-border-dark shadow-sm block">
             <div>
               <p class="text-xs font-semibold text-text-muted dark:text-text-muted-dark uppercase tracking-wider mb-1">Business Hours</p>
               <p class="font-bold text-text dark:text-text-dark text-sm sm:text-base">
