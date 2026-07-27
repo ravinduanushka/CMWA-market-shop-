@@ -33,6 +33,12 @@ function toggleMobileMenu() {
 
         <!-- Desktop right side -->
         <div class="hidden md:flex items-center gap-3">
+          <RouterLink
+            to="/about"
+            class="text-sm font-semibold text-text dark:text-text-dark hover:text-primary transition-colors px-3 py-1.5 rounded-full hover:bg-primary/10"
+          >
+            About Us
+          </RouterLink>
           <ThemeToggle />
           <CartIcon />
           <!-- Login / User -->
@@ -83,6 +89,13 @@ function toggleMobileMenu() {
     <transition name="fade">
       <div v-if="mobileMenuOpen" class="md:hidden border-t border-border dark:border-border-dark px-4 py-4 space-y-3 bg-surface/95 dark:bg-surface-dark/95 backdrop-blur-xl">
         <SearchBar @searched="mobileMenuOpen = false" />
+        <RouterLink
+          to="/about"
+          @click="mobileMenuOpen = false"
+          class="block text-center px-4 py-2 rounded-xl text-text dark:text-text-dark font-medium text-sm hover:text-primary transition-colors border border-border/40"
+        >
+          About Us
+        </RouterLink>
         <template v-if="authStore.isLoggedIn">
           <div class="flex items-center gap-2">
             <img

@@ -43,6 +43,11 @@ const routes: RouteRecordRaw[] = [
         name: 'checkout-online',
         component: () => import('../views/CheckoutOnlineView.vue'),
     },
+    {
+        path: '/about',
+        name: 'about',
+        component: () => import('../views/AboutView.vue'),
+    },
 ]
 
 const router = createRouter({
