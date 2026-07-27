@@ -37,16 +37,11 @@ function returnToHome() {
 
 <template>
   <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-    <!-- Breadcrumb & Header -->
-    <div class="mb-6 flex items-center justify-between">
+    <!-- Breadcrumb -->
+    <div class="mb-6">
       <RouterLink to="/cart" class="text-sm font-medium text-text-muted hover:text-primary transition-colors flex items-center gap-1">
         ← Back to Cart
       </RouterLink>
-      <div class="flex items-center gap-2">
-        <span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider">
-          Payment Step 2 of 2
-        </span>
-      </div>
     </div>
 
     <!-- Success Screen -->
@@ -61,7 +56,7 @@ function returnToHome() {
       <div class="p-4 rounded-2xl bg-surface/80 dark:bg-surface-dark/50 border border-primary/20 max-w-sm mx-auto text-left text-xs space-y-1.5 text-text-muted dark:text-text-muted-dark">
         <p><span class="font-semibold text-text dark:text-text-dark">Payment Method:</span> Online Credit/Debit Card</p>
         <p><span class="font-semibold text-text dark:text-text-dark">Transaction ID:</span> #TXN-{{ Math.floor(100000 + Math.random() * 900000) }}</p>
-        <p><span class="font-semibold text-text dark:text-text-dark">Security:</span> 256-bit SSL Verified</p>
+        <p><span class="font-semibold text-text dark:text-text-dark">Security:</span> Verified Payment</p>
       </div>
       <div class="pt-4">
         <button
@@ -75,23 +70,15 @@ function returnToHome() {
 
     <!-- Main Payment Form Card -->
     <div v-else class="rounded-3xl bg-surface-card dark:bg-surface-card-dark border-2 border-primary/40 dark:border-border-dark shadow-xl p-6 sm:p-8 space-y-8">
-      <!-- Title & Method Toggle Bar -->
+      <!-- Title Bar -->
       <div>
-        <div class="flex items-center justify-between flex-wrap gap-4 border-b border-border dark:border-border-dark pb-6 mb-6">
-          <div>
-            <h1 class="text-2xl sm:text-3xl font-extrabold text-text dark:text-text-dark flex items-center gap-2">
-              💳 Online Card Payment
-            </h1>
-            <p class="text-xs sm:text-sm text-text-muted dark:text-text-muted-dark mt-1">
-              Pay securely using Visa, Mastercard, or American Express.
-            </p>
-          </div>
-          <RouterLink
-            to="/checkout/cod"
-            class="px-4 py-2 rounded-xl bg-surface/80 hover:bg-primary/10 border border-primary/30 text-primary text-xs font-bold transition-all flex items-center gap-1.5"
-          >
-            💵 Switch to Cash on Delivery
-          </RouterLink>
+        <div class="border-b border-border dark:border-border-dark pb-6 mb-6">
+          <h1 class="text-2xl sm:text-3xl font-extrabold text-text dark:text-text-dark flex items-center gap-2">
+            💳 Online Card Payment
+          </h1>
+          <p class="text-xs sm:text-sm text-text-muted dark:text-text-muted-dark mt-1">
+            Pay securely using Visa, Mastercard, or American Express.
+          </p>
         </div>
 
         <!-- Order Items Summary Banner -->
@@ -101,10 +88,8 @@ function returnToHome() {
             <p class="text-xl font-bold text-primary">${{ cartStore.totalPrice.toFixed(2) }}</p>
           </div>
           <div class="text-right">
-            <p class="text-xs text-text-muted dark:text-text-muted-dark">Encrypted Checkout</p>
-            <p class="text-xs font-semibold text-green-600 dark:text-green-400 flex items-center gap-1">
-              🔒 256-bit SSL Secure
-            </p>
+            <p class="text-xs text-text-muted dark:text-text-muted-dark">Total Items</p>
+            <p class="text-sm font-semibold text-text dark:text-text-dark">{{ cartStore.totalItems }} Items (Free Shipping)</p>
           </div>
         </div>
 
