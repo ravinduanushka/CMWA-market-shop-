@@ -166,16 +166,7 @@ onMounted(async () => {
             {{ product.stock > 10 ? 'In Stock' : product.stock > 0 ? `Only ${product.stock} left` : 'Out of Stock' }}
           </span>
         </div>
-        <!-- Tags -->
-        <div v-if="product.tags && product.tags.length" class="flex flex-wrap gap-2 mb-8">
-          <span
-            v-for="tag in product.tags"
-            :key="tag"
-            class="px-3 py-1 rounded-full bg-border/40 dark:bg-border-dark/60 text-xs font-medium text-text-muted dark:text-text-muted-dark"
-          >
-            #{{ tag }}
-          </span>
-        </div>
+
         <!-- Add to cart button -->
         <button
           @click="addToCart"

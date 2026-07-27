@@ -65,12 +65,48 @@ export async function fetchCategories(): Promise<CategoryInfo[]> {
 }
 
 /**
- * Search products by query string
+ * Search products by query string (searches title, description, category, brand, and tags)
  */
 export async function searchProducts(query: string): Promise<ProductsResponse> {
-    const response = await fetchWithRetry(`${BASE_URL}/products/search?q=${encodeURIComponent(query)}`)
-    const data: ProductsResponse = await response.json()
-    return data
+    const q = query.trim().toLowerCase()
+    if (!q) return fetchProducts()
+
+    try {
+        // Fetch products from both search endpoint and full products list to ensure complete results
+        const [searchRes, allRes] = await Promise.all([
+            fetchWithRetry(`${BASE_URL}/products/search?q=${encodeURIComponent(query)}&limit=100`)
+                .then(res => res.json() as Promise<ProductsResponse>)
+                .catch(() => ({ products: [], total: 0, skip: 0, limit: 100 })),
+            fetchProducts().catch(() => ({ products: [], total: 0, skip: 0, limit: 100 }))
+        ])
+
+        // Merge products by ID to eliminate duplicates
+        const productMap = new Map<number, Product>()
+        searchRes.products.forEach(p => productMap.set(p.id, p))
+        allRes.products.forEach(p => productMap.set(p.id, p))
+
+        const combinedProducts = Array.from(productMap.values())
+
+        // Comprehensive filter across title, description, category, brand, and tags
+        const filtered = combinedProducts.filter(p => {
+            const titleMatch = p.title ? p.title.toLowerCase().includes(q) : false
+            const descMatch = p.description ? p.description.toLowerCase().includes(q) : false
+            const catMatch = p.category ? p.category.toLowerCase().includes(q) : false
+            const brandMatch = p.brand ? p.brand.toLowerCase().includes(q) : false
+            const tagsMatch = p.tags ? p.tags.some(t => t.toLowerCase().includes(q)) : false
+
+            return titleMatch || descMatch || catMatch || brandMatch || tagsMatch
+        })
+
+        return {
+            products: filtered,
+            total: filtered.length,
+            skip: 0,
+            limit: filtered.length,
+        }
+    } catch {
+        return { products: [], total: 0, skip: 0, limit: 0 }
+    }
 }
 
 /**
