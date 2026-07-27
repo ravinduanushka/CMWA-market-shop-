@@ -67,17 +67,25 @@ onMounted(() => {
 <template>
   <div>
     <!-- Hero Section -->
-    <section class="relative bg-gray-900">
-      <img src="/hero-bg.png" alt="" class="absolute inset-0 w-full h-full object-cover opacity-60" />
-      <div class="absolute inset-0 bg-black/40"></div>
-      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
-        <div class="text-center max-w-3xl mx-auto">
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4">
+    <section class="relative bg-gray-900 overflow-hidden">
+      <video
+        src="/hero-bg.mp4"
+        autoplay
+        loop
+        muted
+        playsinline
+        preload="auto"
+        class="absolute inset-0 w-full h-full object-cover opacity-85 pointer-events-none"
+      ></video>
+      <div class="absolute inset-0 bg-black/25"></div>
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-36">
+        <div class="text-center max-w-5xl mx-auto">
+          <h1 class="text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold tracking-tight mb-4 whitespace-nowrap drop-shadow-md">
             <span class="text-white">
               WELCOME TO CMWA MARKETING STORE
             </span>
           </h1>
-          <p class="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto">
+          <p class="text-lg sm:text-xl text-white/90 max-w-2xl mx-auto drop-shadow">
             Discover amazing products, grab delicious deals, and enjoy the best shopping experience in town!
           </p>
         </div>
@@ -139,9 +147,10 @@ onMounted(() => {
       <!-- Products Grid -->
       <div v-else class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         <ProductCard
-          v-for="product in products"
+          v-for="(product, idx) in products"
           :key="product.id"
           :product="product"
+          :index="idx"
         />
       </div>
     </section>
