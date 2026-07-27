@@ -143,16 +143,6 @@ function returnToHome() {
             />
           </div>
 
-          <!-- COD Notice Box -->
-          <div class="p-4 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-xs text-text dark:text-text-dark space-y-1">
-            <p class="font-bold text-amber-700 dark:text-amber-400 flex items-center gap-1.5">
-              <span>💡</span> Cash on Delivery Information
-            </p>
-            <p class="text-text-muted dark:text-text-muted-dark leading-relaxed">
-              Please have exact cash ready of <span class="font-bold text-primary">${{ cartStore.totalPrice.toFixed(2) }}</span> when our courier agent delivers your parcel.
-            </p>
-          </div>
-
           <!-- Submit Order Button -->
           <button
             type="submit"
