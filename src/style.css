@@ -76,3 +76,53 @@ html.dark ::-webkit-scrollbar-thumb {
 .fade-leave-to {
   opacity: 0;
 }
+
+/* Smooth hover & focus scale transition for all form input blanks across all pages */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="search"],
+input[type="number"],
+select,
+textarea {
+  background-color: var(--color-surface-card);
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.2s ease, box-shadow 0.25s ease !important;
+}
+
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="password"]:hover,
+input[type="tel"]:hover,
+input[type="search"]:hover,
+input[type="number"]:hover,
+select:hover,
+textarea:hover {
+  transform: scale(1.02);
+  border-color: var(--color-primary) !important;
+  box-shadow: 0 4px 14px rgba(194, 136, 77, 0.2);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="tel"]:focus,
+input[type="search"]:focus,
+input[type="number"]:focus,
+select:focus,
+textarea:focus {
+  transform: scale(1.025);
+  border-color: var(--color-primary) !important;
+  box-shadow: 0 6px 18px rgba(194, 136, 77, 0.3);
+}
+
+html.dark input[type="text"],
+html.dark input[type="email"],
+html.dark input[type="password"],
+html.dark input[type="tel"],
+html.dark input[type="search"],
+html.dark input[type="number"],
+html.dark select,
+html.dark textarea {
+  background-color: var(--color-surface-card-dark);
+}

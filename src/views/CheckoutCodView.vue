@@ -106,7 +106,7 @@ function returnToHome() {
                 type="text"
                 required
                 placeholder="John Doe"
-                class="w-full px-4 py-3 rounded-xl bg-surface dark:bg-surface-dark border border-primary/30 dark:border-border-dark text-sm text-text dark:text-text-dark focus:outline-none focus:border-primary"
+                class="w-full px-4 py-3 rounded-xl bg-surface-card dark:bg-surface-card-dark border-2 border-primary/30 dark:border-border-dark text-sm text-text dark:text-text-dark focus:outline-none focus:border-primary shadow-sm"
               />
             </div>
             <div>
@@ -116,7 +116,7 @@ function returnToHome() {
                 type="tel"
                 required
                 placeholder="+94 77 123 4567"
-                class="w-full px-4 py-3 rounded-xl bg-surface dark:bg-surface-dark border border-primary/30 dark:border-border-dark text-sm text-text dark:text-text-dark focus:outline-none focus:border-primary"
+                class="w-full px-4 py-3 rounded-xl bg-surface-card dark:bg-surface-card-dark border-2 border-primary/30 dark:border-border-dark text-sm text-text dark:text-text-dark focus:outline-none focus:border-primary shadow-sm"
               />
             </div>
           </div>
@@ -128,7 +128,7 @@ function returnToHome() {
               type="text"
               required
               placeholder="123 Market Street, Apartment 4B"
-              class="w-full px-4 py-3 rounded-xl bg-surface dark:bg-surface-dark border border-primary/30 dark:border-border-dark text-sm text-text dark:text-text-dark focus:outline-none focus:border-primary"
+              class="w-full px-4 py-3 rounded-xl bg-surface-card dark:bg-surface-card-dark border-2 border-primary/30 dark:border-border-dark text-sm text-text dark:text-text-dark focus:outline-none focus:border-primary shadow-sm"
             />
           </div>
 
@@ -139,7 +139,7 @@ function returnToHome() {
               type="text"
               required
               placeholder="Colombo / Kandy / Galle"
-              class="w-full px-4 py-3 rounded-xl bg-surface dark:bg-surface-dark border border-primary/30 dark:border-border-dark text-sm text-text dark:text-text-dark focus:outline-none focus:border-primary"
+              class="w-full px-4 py-3 rounded-xl bg-surface-card dark:bg-surface-card-dark border-2 border-primary/30 dark:border-border-dark text-sm text-text dark:text-text-dark focus:outline-none focus:border-primary shadow-sm"
             />
           </div>
 

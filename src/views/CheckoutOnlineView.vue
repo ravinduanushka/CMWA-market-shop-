@@ -106,7 +106,7 @@ function returnToHome() {
               type="text"
               required
               placeholder="John Doe"
-              class="w-full px-4 py-3 rounded-xl bg-surface dark:bg-surface-dark border border-primary/30 dark:border-border-dark text-sm text-text dark:text-text-dark focus:outline-none focus:border-primary"
+              class="w-full px-4 py-3 rounded-xl bg-surface-card dark:bg-surface-card-dark border-2 border-primary/30 dark:border-border-dark text-sm text-text dark:text-text-dark focus:outline-none focus:border-primary shadow-sm"
             />
           </div>
 
@@ -132,7 +132,7 @@ function returnToHome() {
                 type="text"
                 required
                 placeholder="MM/YY"
-                class="w-full px-4 py-3 rounded-xl bg-surface dark:bg-surface-dark border border-primary/30 dark:border-border-dark text-sm text-text dark:text-text-dark focus:outline-none focus:border-primary"
+                class="w-full px-4 py-3 rounded-xl bg-surface-card dark:bg-surface-card-dark border-2 border-primary/30 dark:border-border-dark text-sm text-text dark:text-text-dark focus:outline-none focus:border-primary shadow-sm"
               />
             </div>
             <div>
@@ -143,7 +143,7 @@ function returnToHome() {
                 required
                 placeholder="123"
                 maxLength="4"
-                class="w-full px-4 py-3 rounded-xl bg-surface dark:bg-surface-dark border border-primary/30 dark:border-border-dark text-sm text-text dark:text-text-dark focus:outline-none focus:border-primary"
+                class="w-full px-4 py-3 rounded-xl bg-surface-card dark:bg-surface-card-dark border-2 border-primary/30 dark:border-border-dark text-sm text-text dark:text-text-dark focus:outline-none focus:border-primary shadow-sm"
               />
             </div>
           </div>
@@ -155,7 +155,7 @@ function returnToHome() {
               type="text"
               required
               placeholder="123 Street Address, City, Country"
-              class="w-full px-4 py-3 rounded-xl bg-surface dark:bg-surface-dark border border-primary/30 dark:border-border-dark text-sm text-text dark:text-text-dark focus:outline-none focus:border-primary"
+              class="w-full px-4 py-3 rounded-xl bg-surface-card dark:bg-surface-card-dark border-2 border-primary/30 dark:border-border-dark text-sm text-text dark:text-text-dark focus:outline-none focus:border-primary shadow-sm"
             />
           </div>
 
