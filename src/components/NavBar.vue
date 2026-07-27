@@ -54,12 +54,6 @@ function toggleMobileMenu() {
           </template>
           <div v-else class="flex items-center gap-3">
             <RouterLink
-              to="/register"
-              class="text-sm font-medium text-text-muted dark:text-text-muted-dark hover:text-primary transition-colors cursor-pointer"
-            >
-              Register
-            </RouterLink>
-            <RouterLink
               to="/login"
               class="flex items-center gap-1.5 px-4 py-2 rounded-full bg-primary text-white font-medium text-sm hover:bg-primary-dark transition-colors duration-200"
             >
