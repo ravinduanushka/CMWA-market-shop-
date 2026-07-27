@@ -118,7 +118,7 @@ function returnToHome() {
                 type="text"
                 required
                 placeholder="4532 •••• •••• 8892"
-                class="w-full px-4 py-3 rounded-xl bg-surface dark:bg-surface-dark border border-primary/30 dark:border-border-dark text-sm text-text dark:text-text-dark focus:outline-none focus:border-primary pr-12"
+                class="w-full px-4 py-3 rounded-xl bg-surface-card dark:bg-surface-card-dark border-2 border-primary/30 dark:border-border-dark text-sm text-text dark:text-text-dark focus:outline-none focus:border-primary pr-12 shadow-sm"
               />
               <span class="absolute right-3.5 top-1/2 -translate-y-1/2 text-lg">💳</span>
             </div>

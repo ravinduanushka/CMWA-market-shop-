@@ -73,7 +73,7 @@ async function handleLogin() {
                 type="text"
                 placeholder="Enter your username"
                 required
-                class="w-full pl-11 pr-4 py-3 rounded-xl bg-border/30 dark:bg-border-dark/40 text-text dark:text-text-dark placeholder-text-muted dark:placeholder-text-muted-dark focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all duration-200"
+                class="w-full pl-11 pr-4 py-3 rounded-xl bg-surface-card dark:bg-surface-card-dark border-2 border-primary/30 dark:border-border-dark text-text dark:text-text-dark placeholder-text-muted dark:placeholder-text-muted-dark focus:outline-none focus:border-primary shadow-sm"
               />
             </div>
           </div>
@@ -97,7 +97,7 @@ async function handleLogin() {
                 :type="showPassword ? 'text' : 'password'"
                 placeholder="Enter your password"
                 required
-                class="w-full pl-11 pr-11 py-3 rounded-xl bg-border/30 dark:bg-border-dark/40 text-text dark:text-text-dark placeholder-text-muted dark:placeholder-text-muted-dark focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all duration-200"
+                class="w-full pl-11 pr-11 py-3 rounded-xl bg-surface-card dark:bg-surface-card-dark border-2 border-primary/30 dark:border-border-dark text-text dark:text-text-dark placeholder-text-muted dark:placeholder-text-muted-dark focus:outline-none focus:border-primary shadow-sm"
               />
               <button
                 type="button"
