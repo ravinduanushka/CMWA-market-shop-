@@ -77,12 +77,12 @@ onUnmounted(() => {
       </RouterLink>
     </div>
 
-    <!-- Part 1: Description Section with Premium Borderless Typewriter -->
+    <!-- Part 1: Description Section with Typewriter in Rectangle Box -->
     <section class="transition-all duration-300">
-      <div class="min-h-[140px] px-2 py-2">
-        <p class="text-xl sm:text-2xl text-text dark:text-text-dark leading-relaxed font-semibold tracking-wide">
+      <div class="p-6 sm:p-8 rounded-2xl border-2 border-primary/40 dark:border-border-dark shadow-sm min-h-[160px]">
+        <p class="text-lg sm:text-xl text-text dark:text-text-dark leading-relaxed font-semibold tracking-wide">
           {{ displayedText }}
-          <span class="inline-block w-2.5 h-7 bg-primary ml-1 rounded-sm animate-pulse align-middle shadow-sm"></span>
+          <span class="inline-block w-2.5 h-6 bg-primary ml-1 rounded-sm animate-pulse align-middle shadow-sm"></span>
         </p>
       </div>
     </section>
