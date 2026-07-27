@@ -93,7 +93,7 @@ async function handleRegister() {
                 type="text"
                 placeholder="Ravindu"
                 required
-                class="w-full px-4 py-2.5 rounded-xl bg-border/30 dark:bg-border-dark/40 text-text dark:text-text-dark placeholder-text-muted dark:placeholder-text-muted-dark focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all duration-200"
+                class="w-full px-4 py-3 rounded-xl bg-surface-card dark:bg-surface-card-dark border-2 border-primary/30 dark:border-border-dark text-text dark:text-text-dark placeholder-text-muted dark:placeholder-text-muted-dark focus:outline-none focus:border-primary shadow-sm"
               />
             </div>
 
@@ -108,7 +108,7 @@ async function handleRegister() {
                 type="text"
                 placeholder="Anushka"
                 required
-                class="w-full px-4 py-2.5 rounded-xl bg-border/30 dark:bg-border-dark/40 text-text dark:text-text-dark placeholder-text-muted dark:placeholder-text-muted-dark focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all duration-200"
+                class="w-full px-4 py-3 rounded-xl bg-surface-card dark:bg-surface-card-dark border-2 border-primary/30 dark:border-border-dark text-text dark:text-text-dark placeholder-text-muted dark:placeholder-text-muted-dark focus:outline-none focus:border-primary shadow-sm"
               />
             </div>
           </div>
@@ -132,7 +132,7 @@ async function handleRegister() {
                 type="email"
                 placeholder="ravindu@example.com"
                 required
-                class="w-full pl-11 pr-4 py-2.5 rounded-xl bg-border/30 dark:bg-border-dark/40 text-text dark:text-text-dark placeholder-text-muted dark:placeholder-text-muted-dark focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all duration-200"
+                class="w-full pl-11 pr-4 py-3 rounded-xl bg-surface-card dark:bg-surface-card-dark border-2 border-primary/30 dark:border-border-dark text-text dark:text-text-dark placeholder-text-muted dark:placeholder-text-muted-dark focus:outline-none focus:border-primary shadow-sm"
               />
             </div>
           </div>
@@ -156,7 +156,7 @@ async function handleRegister() {
                 type="text"
                 placeholder="ravindu02"
                 required
-                class="w-full pl-11 pr-4 py-2.5 rounded-xl bg-border/30 dark:bg-border-dark/40 text-text dark:text-text-dark placeholder-text-muted dark:placeholder-text-muted-dark focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all duration-200"
+                class="w-full pl-11 pr-4 py-3 rounded-xl bg-surface-card dark:bg-surface-card-dark border-2 border-primary/30 dark:border-border-dark text-text dark:text-text-dark placeholder-text-muted dark:placeholder-text-muted-dark focus:outline-none focus:border-primary shadow-sm"
               />
             </div>
           </div>
@@ -180,7 +180,7 @@ async function handleRegister() {
                 :type="showPassword ? 'text' : 'password'"
                 placeholder="••••••••"
                 required
-                class="w-full pl-11 pr-11 py-2.5 rounded-xl bg-border/30 dark:bg-border-dark/40 text-text dark:text-text-dark placeholder-text-muted dark:placeholder-text-muted-dark focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all duration-200"
+                class="w-full pl-11 pr-11 py-3 rounded-xl bg-surface-card dark:bg-surface-card-dark border-2 border-primary/30 dark:border-border-dark text-text dark:text-text-dark placeholder-text-muted dark:placeholder-text-muted-dark focus:outline-none focus:border-primary shadow-sm"
               />
               <button
                 type="button"
@@ -216,7 +216,7 @@ async function handleRegister() {
                 :type="showConfirmPassword ? 'text' : 'password'"
                 placeholder="••••••••"
                 required
-                class="w-full pl-11 pr-11 py-2.5 rounded-xl bg-border/30 dark:bg-border-dark/40 text-text dark:text-text-dark placeholder-text-muted dark:placeholder-text-muted-dark focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all duration-200"
+                class="w-full pl-11 pr-11 py-3 rounded-xl bg-surface-card dark:bg-surface-card-dark border-2 border-primary/30 dark:border-border-dark text-text dark:text-text-dark placeholder-text-muted dark:placeholder-text-muted-dark focus:outline-none focus:border-primary shadow-sm"
                 :class="{ 'ring-2 ring-red-500/50': !passwordsMatch }"
               />
               <button
