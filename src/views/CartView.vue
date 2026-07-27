@@ -122,13 +122,13 @@ function getDiscountedPrice(price: number, discount: number): number {
             to="/checkout/cod"
             class="py-3.5 px-4 rounded-2xl bg-surface dark:bg-surface-dark hover:bg-primary/10 border-2 border-primary/40 text-primary font-bold text-sm text-center transition-all duration-200 flex items-center justify-center gap-2 shadow-sm cursor-pointer"
           >
-            💵 Cash on Delivery
+             Cash on Delivery
           </RouterLink>
           <RouterLink
             to="/checkout/online"
             class="py-3.5 px-4 rounded-2xl bg-primary text-white font-bold text-sm text-center hover:bg-primary-dark shadow-md shadow-primary/25 transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer"
           >
-            💳 Online Card Payment
+             Online Card Payment
           </RouterLink>
         </div>
 

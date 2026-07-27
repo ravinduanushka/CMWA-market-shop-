@@ -49,7 +49,7 @@ function returnToHome() {
       <div class="w-20 h-20 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 rounded-full flex items-center justify-center mx-auto text-4xl shadow-md">
         ✓
       </div>
-      <h2 class="text-3xl font-extrabold text-text dark:text-text-dark">Payment Successful! 🎉</h2>
+      <h2 class="text-3xl font-extrabold text-text dark:text-text-dark">Payment Successful! </h2>
       <p class="text-base text-text-muted dark:text-text-muted-dark max-w-md mx-auto leading-relaxed">
         Thank you for shopping with <span class="font-bold text-primary">CMWA MARKETING STORE</span>! Your Online Card Payment has been authorized and confirmed.
       </p>
@@ -63,7 +63,7 @@ function returnToHome() {
           @click="returnToHome"
           class="px-8 py-4 rounded-2xl bg-primary text-white font-bold text-lg hover:bg-primary-dark shadow-lg shadow-primary/25 transition-all duration-200 cursor-pointer"
         >
-          Return to Home Store 🛍️
+          Return to Home Store 
         </button>
       </div>
     </div>
@@ -74,7 +74,7 @@ function returnToHome() {
       <div>
         <div class="border-b border-border dark:border-border-dark pb-6 mb-6">
           <h1 class="text-2xl sm:text-3xl font-extrabold text-text dark:text-text-dark flex items-center gap-2">
-            💳 Online Card Payment
+             Online Card Payment
           </h1>
           <p class="text-xs sm:text-sm text-text-muted dark:text-text-muted-dark mt-1">
             Pay securely using Visa, Mastercard, or American Express.
@@ -96,7 +96,7 @@ function returnToHome() {
         <!-- Card Payment Form -->
         <form @submit.prevent="handlePayNow" class="space-y-4">
           <h3 class="text-base font-bold text-text dark:text-text-dark flex items-center gap-2">
-            💳 Credit / Debit Card Information
+             Credit / Debit Card Information
           </h3>
 
           <div>
@@ -105,7 +105,7 @@ function returnToHome() {
               v-model="cardHolder"
               type="text"
               required
-              placeholder="John Doe"
+              placeholder="Ravindu Anushka"
               class="w-full px-4 py-3 rounded-xl bg-surface-card dark:bg-surface-card-dark border-2 border-primary/30 dark:border-border-dark text-sm text-text dark:text-text-dark focus:outline-none focus:border-primary shadow-sm"
             />
           </div>
@@ -120,7 +120,7 @@ function returnToHome() {
                 placeholder="4532 •••• •••• 8892"
                 class="w-full px-4 py-3 rounded-xl bg-surface-card dark:bg-surface-card-dark border-2 border-primary/30 dark:border-border-dark text-sm text-text dark:text-text-dark focus:outline-none focus:border-primary pr-12 shadow-sm"
               />
-              <span class="absolute right-3.5 top-1/2 -translate-y-1/2 text-lg">💳</span>
+              <span class="absolute right-3.5 top-1/2 -translate-y-1/2 text-lg"></span>
             </div>
           </div>
 
@@ -167,7 +167,7 @@ function returnToHome() {
           >
             <span v-if="isProcessing" class="animate-spin w-5 h-5 border-2 border-white border-t-transparent rounded-full"></span>
             <span v-else>
-              Pay ${{ cartStore.totalPrice.toFixed(2) }} Now 🔒
+              Pay ${{ cartStore.totalPrice.toFixed(2) }} Now 
             </span>
           </button>
         </form>
