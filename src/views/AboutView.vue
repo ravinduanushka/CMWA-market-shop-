@@ -103,7 +103,6 @@ onUnmounted(() => {
           <span class="text-3xl">📞</span>
           <div>
             <h2 class="text-2xl sm:text-3xl font-extrabold text-text dark:text-text-dark">Contact Us</h2>
-            <p class="text-xs sm:text-sm text-text-muted dark:text-text-muted-dark">We are here to assist you 24/7</p>
           </div>
         </div>
 

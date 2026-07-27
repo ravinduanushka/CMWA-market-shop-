@@ -17,7 +17,7 @@ useThemeStore()
       </router-view>
     </main>
     <!-- Footer -->
-    <footer class="border-t border-border dark:border-border-dark py-8 mt-16">
+    <footer class="border-t-2 border-primary/40 dark:border-border-dark py-8 mt-16 transition-colors">
       <div class="max-w-7xl mx-auto px-4 text-center">
         <p class="text-lg font-bold text-primary mb-2"> CMWA MARKETING STORE</p>
         <p class="text-text-muted dark:text-text-muted-dark text-sm">

@@ -33,12 +33,6 @@ function toggleMobileMenu() {
 
         <!-- Desktop right side -->
         <div class="hidden md:flex items-center gap-3">
-          <RouterLink
-            to="/about"
-            class="text-sm font-semibold text-text dark:text-text-dark hover:text-primary transition-colors px-3 py-1.5 rounded-full hover:bg-primary/10"
-          >
-            About Us
-          </RouterLink>
           <ThemeToggle />
           <CartIcon />
           <!-- Login / User -->
@@ -67,6 +61,14 @@ function toggleMobileMenu() {
               Login
             </RouterLink>
           </div>
+
+          <!-- About Us Button (Same pill button style as Login, placed on the right of Login) -->
+          <RouterLink
+            to="/about"
+            class="px-4 py-2 rounded-full bg-primary text-white font-medium text-sm hover:bg-primary-dark transition-colors duration-200 shadow-sm"
+          >
+            About Us
+          </RouterLink>
         </div>
 
         <!-- Mobile hamburger -->
@@ -92,7 +94,7 @@ function toggleMobileMenu() {
         <RouterLink
           to="/about"
           @click="mobileMenuOpen = false"
-          class="block text-center px-4 py-2 rounded-xl text-text dark:text-text-dark font-medium text-sm hover:text-primary transition-colors border border-border/40"
+          class="block text-center px-4 py-2 rounded-full bg-primary text-white font-medium text-sm hover:bg-primary-dark transition-colors"
         >
           About Us
         </RouterLink>
