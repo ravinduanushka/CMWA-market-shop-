@@ -181,11 +181,11 @@ function finishOrder() {
     <!-- 💳 Payment Options Modal Window -->
     <div
       v-if="showPaymentModal"
-      class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fade-in"
+      class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-surface/85 dark:bg-surface-dark/85 backdrop-blur-md animate-fade-in"
       @click.self="closePaymentModal"
     >
       <div
-        class="relative w-full max-w-lg rounded-3xl bg-surface-card dark:bg-surface-card-dark border-2 border-primary/30 dark:border-border-dark shadow-2xl p-6 sm:p-8 transform transition-all duration-300 scale-100"
+        class="relative w-full max-w-lg rounded-3xl bg-surface-card dark:bg-surface-card-dark border-2 border-primary/40 dark:border-border-dark shadow-2xl shadow-primary/20 p-6 sm:p-8 transform transition-all duration-300 scale-100"
       >
         <!-- Modal Header -->
         <div class="flex items-center justify-between border-b border-border dark:border-border-dark pb-4 mb-6">
@@ -195,7 +195,7 @@ function finishOrder() {
           </div>
           <button
             @click="closePaymentModal"
-            class="p-2 rounded-xl text-text-muted hover:text-text hover:bg-border/40 dark:hover:bg-border-dark/40 transition-colors cursor-pointer"
+            class="p-2 rounded-xl text-text-muted hover:text-text hover:bg-surface/80 dark:hover:bg-border-dark/40 transition-colors cursor-pointer"
           >
             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
@@ -235,7 +235,7 @@ function finishOrder() {
                 'p-4 rounded-2xl border-2 text-left transition-all duration-200 cursor-pointer flex flex-col justify-between h-full',
                 paymentMethod === 'cod'
                   ? 'border-primary bg-primary/10 dark:bg-primary/20 shadow-sm'
-                  : 'border-border dark:border-border-dark hover:border-primary/40'
+                  : 'border-border dark:border-border-dark hover:border-primary/40 bg-surface/40 dark:bg-surface-dark/40'
               ]"
             >
               <div class="flex items-center justify-between mb-2">
@@ -256,7 +256,7 @@ function finishOrder() {
                 'p-4 rounded-2xl border-2 text-left transition-all duration-200 cursor-pointer flex flex-col justify-between h-full',
                 paymentMethod === 'online'
                   ? 'border-primary bg-primary/10 dark:bg-primary/20 shadow-sm'
-                  : 'border-border dark:border-border-dark hover:border-primary/40'
+                  : 'border-border dark:border-border-dark hover:border-primary/40 bg-surface/40 dark:bg-surface-dark/40'
               ]"
             >
               <div class="flex items-center justify-between mb-2">
@@ -271,7 +271,7 @@ function finishOrder() {
           </div>
 
           <!-- Cash on Delivery Details -->
-          <div v-if="paymentMethod === 'cod'" class="p-4 rounded-2xl bg-border/20 dark:bg-border-dark/30 border border-border dark:border-border-dark space-y-2">
+          <div v-if="paymentMethod === 'cod'" class="p-4 rounded-2xl bg-surface/70 dark:bg-surface-dark/50 border border-primary/20 dark:border-border-dark space-y-2">
             <div class="flex items-center gap-2 text-sm font-semibold text-text dark:text-text-dark">
               <span>📦</span> Pay with Cash upon Delivery
             </div>
@@ -281,7 +281,7 @@ function finishOrder() {
           </div>
 
           <!-- Online Payment Card Form Demo -->
-          <div v-if="paymentMethod === 'online'" class="space-y-3 p-4 rounded-2xl bg-border/20 dark:bg-border-dark/30 border border-border dark:border-border-dark">
+          <div v-if="paymentMethod === 'online'" class="space-y-3 p-4 rounded-2xl bg-surface/70 dark:bg-surface-dark/50 border border-primary/20 dark:border-border-dark">
             <div class="flex items-center justify-between mb-1">
               <span class="text-xs font-semibold text-text dark:text-text-dark">Card Details (Demo Mode)</span>
               <span class="text-[10px] text-text-muted dark:text-text-muted-dark">🔒 256-bit SSL Encrypted</span>
