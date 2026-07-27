@@ -84,11 +84,11 @@ onMounted(async () => {
       <p class="text-text-muted dark:text-text-muted-dark">{{ error }}</p>
     </div>
 
-    <!-- Product Detail -->
-    <div v-else-if="product" class="flex flex-col lg:flex-row gap-8 lg:gap-12">
+    <!-- Product Detail Card -->
+    <div v-else-if="product" class="rounded-3xl bg-surface-card dark:bg-surface-card-dark border-2 border-primary/40 dark:border-border-dark shadow-xl p-6 sm:p-8 lg:p-10 flex flex-col lg:flex-row gap-8 lg:gap-12">
       <!-- Image Gallery -->
       <div class="lg:w-1/2">
-        <div class="relative rounded-2xl overflow-hidden bg-border/10 dark:bg-border-dark/10 aspect-square mb-4">
+        <div class="relative rounded-2xl overflow-hidden bg-slate-50/90 dark:bg-border-dark/20 border-2 border-primary/20 dark:border-border-dark aspect-square mb-4 shadow-sm">
           <img
             :src="product.images[selectedImage] || product.thumbnail"
             :alt="product.title"
