@@ -16,10 +16,10 @@ const emit = defineEmits<{
     <button
       @click="emit('select', '')"
       :class="[
-        'px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 cursor-pointer',
+        'px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 cursor-pointer border',
         selectedCategory === ''
-          ? 'bg-primary text-white shadow-md shadow-primary/25'
-          : 'bg-border/40 dark:bg-border-dark/60 text-text-muted dark:text-text-muted-dark hover:bg-border dark:hover:bg-border-dark hover:text-text dark:hover:text-text-dark'
+          ? 'bg-primary text-white border-primary shadow-md shadow-primary/25'
+          : 'bg-surface-card dark:bg-surface-card-dark border-primary/30 dark:border-border-dark text-text dark:text-text-dark hover:border-primary hover:shadow-sm'
       ]"
     >
       🍽️ All
@@ -29,10 +29,10 @@ const emit = defineEmits<{
       :key="cat.slug"
       @click="emit('select', cat.slug)"
       :class="[
-        'px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 capitalize cursor-pointer',
+        'px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 capitalize cursor-pointer border',
         selectedCategory === cat.slug
-          ? 'bg-primary text-white shadow-md shadow-primary/25'
-          : 'bg-border/40 dark:bg-border-dark/60 text-text-muted dark:text-text-muted-dark hover:bg-border dark:hover:bg-border-dark hover:text-text dark:hover:text-text-dark'
+          ? 'bg-primary text-white border-primary shadow-md shadow-primary/25'
+          : 'bg-surface-card dark:bg-surface-card-dark border-primary/30 dark:border-border-dark text-text dark:text-text-dark hover:border-primary hover:shadow-sm'
       ]"
     >
       {{ cat.name }}
