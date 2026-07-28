@@ -146,7 +146,7 @@ onMounted(() => {
 
       <!-- Empty state -->
       <div v-else-if="products.length === 0" class="text-center py-16">
-        <p class="text-5xl mb-4">🔍</p>
+        <p class="text-5xl mb-4"></p>
         <p class="text-xl font-semibold text-text dark:text-text-dark mb-2">No products found</p>
         <p class="text-text-muted dark:text-text-muted-dark">Try a different search or category.</p>
       </div>
