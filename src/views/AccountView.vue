@@ -13,6 +13,7 @@ const router = useRouter()
 
 const favoriteProducts = ref<Product[]>([])
 const loadingFavorites = ref(false)
+const isPageLoaded = ref(false)
 
 // Load favorited products list
 async function loadFavorites() {
@@ -34,6 +35,10 @@ async function loadFavorites() {
 
 onMounted(() => {
   loadFavorites()
+  // Trigger staggered slide-in entrance animation after mount
+  setTimeout(() => {
+    isPageLoaded.value = true
+  }, 50)
 })
 
 function handleLogout() {
@@ -43,10 +48,13 @@ function handleLogout() {
 </script>
 
 <template>
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-10">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-10 overflow-hidden">
     
     <!-- Back to Home Navigation Link -->
-    <div>
+    <div
+      class="transition-all duration-700 ease-out transform-gpu"
+      :class="isPageLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'"
+    >
       <RouterLink
         to="/"
         class="inline-flex items-center gap-2 text-text-muted dark:text-text-muted-dark hover:text-primary transition-colors font-semibold text-sm hover:-translate-x-1 duration-200"
@@ -56,27 +64,44 @@ function handleLogout() {
     </div>
 
     <!-- Page Title Header -->
-    <div class="border-b-2 border-primary/40 pb-4">
+    <div
+      class="border-b-2 border-primary/40 pb-4 transition-all duration-700 ease-out transform-gpu"
+      :class="isPageLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-8'"
+    >
       <h1 class="text-2xl sm:text-3xl font-extrabold text-text dark:text-text-dark">
         My Account
       </h1>
     </div>
 
-    <!-- Section 1: Account Profile Boxes (Matching About Us Card Style) -->
+    <!-- Section 1: Account Profile Boxes (Staggered Left & Right Entrance) -->
     <div class="space-y-4">
-      <p class="text-xs font-bold text-primary uppercase tracking-wider mb-2">Account Profile</p>
+      <p
+        class="text-xs font-bold text-primary uppercase tracking-wider mb-2 transition-all duration-700 ease-out transform-gpu"
+        :class="isPageLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'"
+        :style="{ transitionDelay: isPageLoaded ? '80ms' : '0ms' }"
+      >
+        Account Profile
+      </p>
       
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-        <!-- First Name Box -->
-        <div class="p-6 rounded-2xl border-2 border-primary/40 dark:border-border-dark shadow-sm transition-all duration-300 ease-out hover:scale-[1.03] hover:border-primary hover:shadow-lg cursor-pointer">
+        <!-- First Name Box (Slides in from LEFT) -->
+        <div
+          class="p-6 rounded-2xl border-2 border-primary/40 dark:border-border-dark shadow-sm transition-all duration-700 ease-out hover:scale-[1.03] hover:border-primary hover:shadow-lg cursor-pointer transform-gpu"
+          :class="isPageLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'"
+          :style="{ transitionDelay: isPageLoaded ? '140ms' : '0ms' }"
+        >
           <p class="text-xs font-bold text-primary uppercase tracking-wider mb-1.5">First Name</p>
           <p class="font-extrabold text-text dark:text-text-dark text-base sm:text-lg">
             {{ authStore.user?.firstName || 'Ravindu' }}
           </p>
         </div>
 
-        <!-- Last Name Box -->
-        <div class="p-6 rounded-2xl border-2 border-primary/40 dark:border-border-dark shadow-sm transition-all duration-300 ease-out hover:scale-[1.03] hover:border-primary hover:shadow-lg cursor-pointer">
+        <!-- Last Name Box (Slides in from RIGHT) -->
+        <div
+          class="p-6 rounded-2xl border-2 border-primary/40 dark:border-border-dark shadow-sm transition-all duration-700 ease-out hover:scale-[1.03] hover:border-primary hover:shadow-lg cursor-pointer transform-gpu"
+          :class="isPageLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'"
+          :style="{ transitionDelay: isPageLoaded ? '260ms' : '0ms' }"
+        >
           <p class="text-xs font-bold text-primary uppercase tracking-wider mb-1.5">Last Name</p>
           <p class="font-extrabold text-text dark:text-text-dark text-base sm:text-lg">
             {{ authStore.user?.lastName || 'Anushka' }}
@@ -84,8 +109,12 @@ function handleLogout() {
         </div>
       </div>
 
-      <!-- Email Address Box -->
-      <div class="p-6 rounded-2xl border-2 border-primary/40 dark:border-border-dark shadow-sm transition-all duration-300 ease-out hover:scale-[1.03] hover:border-primary hover:shadow-lg cursor-pointer">
+      <!-- Email Address Box (Slides in from LEFT) -->
+      <div
+        class="p-6 rounded-2xl border-2 border-primary/40 dark:border-border-dark shadow-sm transition-all duration-700 ease-out hover:scale-[1.03] hover:border-primary hover:shadow-lg cursor-pointer transform-gpu"
+        :class="isPageLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'"
+        :style="{ transitionDelay: isPageLoaded ? '380ms' : '0ms' }"
+      >
         <p class="text-xs font-bold text-primary uppercase tracking-wider mb-1.5">Email Address</p>
         <p class="font-extrabold text-text dark:text-text-dark text-base sm:text-lg break-all">
           {{ authStore.user?.email || 'ravindu@example.com' }}
@@ -93,14 +122,24 @@ function handleLogout() {
       </div>
     </div>
 
-    <!-- Section 2: Settings Cards (Notifications, Currency, Language) -->
+    <!-- Section 2: Settings Cards (Notifications, Currency, Language - Staggered Entrance) -->
     <div class="space-y-4">
-      <p class="text-xs font-bold text-primary uppercase tracking-wider mb-2">Preferences & Settings</p>
+      <p
+        class="text-xs font-bold text-primary uppercase tracking-wider mb-2 transition-all duration-700 ease-out transform-gpu"
+        :class="isPageLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'"
+        :style="{ transitionDelay: isPageLoaded ? '460ms' : '0ms' }"
+      >
+        Preferences & Settings
+      </p>
       
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         
-        <!-- Notifications Card -->
-        <div class="p-6 rounded-2xl border-2 border-primary/40 dark:border-border-dark shadow-sm flex flex-col justify-between space-y-4 transition-all duration-300 ease-out hover:scale-[1.03] hover:border-primary hover:shadow-lg cursor-pointer">
+        <!-- Notifications Card (Slides in from LEFT) -->
+        <div
+          class="p-6 rounded-2xl border-2 border-primary/40 dark:border-border-dark shadow-sm flex flex-col justify-between space-y-4 transition-all duration-700 ease-out hover:scale-[1.03] hover:border-primary hover:shadow-lg cursor-pointer transform-gpu"
+          :class="isPageLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'"
+          :style="{ transitionDelay: isPageLoaded ? '520ms' : '0ms' }"
+        >
           <div>
             <p class="text-xs font-bold text-primary uppercase tracking-wider mb-1.5">Notifications</p>
             <p class="font-extrabold text-text dark:text-text-dark text-base">
@@ -116,8 +155,12 @@ function handleLogout() {
           </button>
         </div>
 
-        <!-- Currency Card -->
-        <div class="p-6 rounded-2xl border-2 border-primary/40 dark:border-border-dark shadow-sm flex flex-col justify-between space-y-4 transition-all duration-300 ease-out hover:scale-[1.03] hover:border-primary hover:shadow-lg cursor-pointer">
+        <!-- Currency Card (Slides up from CENTER) -->
+        <div
+          class="p-6 rounded-2xl border-2 border-primary/40 dark:border-border-dark shadow-sm flex flex-col justify-between space-y-4 transition-all duration-700 ease-out hover:scale-[1.03] hover:border-primary hover:shadow-lg cursor-pointer transform-gpu"
+          :class="isPageLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'"
+          :style="{ transitionDelay: isPageLoaded ? '660ms' : '0ms' }"
+        >
           <div>
             <p class="text-xs font-bold text-primary uppercase tracking-wider mb-1.5">Currency</p>
             <p class="font-extrabold text-text dark:text-text-dark text-base">
@@ -135,8 +178,12 @@ function handleLogout() {
           </select>
         </div>
 
-        <!-- Language Card -->
-        <div class="p-6 rounded-2xl border-2 border-primary/40 dark:border-border-dark shadow-sm flex flex-col justify-between space-y-4 transition-all duration-300 ease-out hover:scale-[1.03] hover:border-primary hover:shadow-lg cursor-pointer">
+        <!-- Language Card (Slides in from RIGHT) -->
+        <div
+          class="p-6 rounded-2xl border-2 border-primary/40 dark:border-border-dark shadow-sm flex flex-col justify-between space-y-4 transition-all duration-700 ease-out hover:scale-[1.03] hover:border-primary hover:shadow-lg cursor-pointer transform-gpu"
+          :class="isPageLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'"
+          :style="{ transitionDelay: isPageLoaded ? '800ms' : '0ms' }"
+        >
           <div>
             <p class="text-xs font-bold text-primary uppercase tracking-wider mb-1.5">Language</p>
             <p class="font-extrabold text-text dark:text-text-dark text-base">
@@ -158,8 +205,12 @@ function handleLogout() {
       </div>
     </div>
 
-    <!-- Section 3: My Favourites Section -->
-    <div class="space-y-4">
+    <!-- Section 3: My Favourites Section (Slides up from BOTTOM) -->
+    <div
+      class="space-y-4 transition-all duration-700 ease-out transform-gpu"
+      :class="isPageLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'"
+      :style="{ transitionDelay: isPageLoaded ? '920ms' : '0ms' }"
+    >
       <div class="border-b-2 border-primary/40 pb-2 flex items-center justify-between">
         <h2 class="text-xl font-extrabold text-text dark:text-text-dark">
           My Favourites (❤️ {{ accountStore.favorites.length }})
@@ -181,8 +232,12 @@ function handleLogout() {
       </div>
     </div>
 
-    <!-- Section 4: Logout Button Box -->
-    <div class="p-6 rounded-2xl border-2 border-primary/40 dark:border-border-dark shadow-sm flex items-center justify-between transition-all duration-300 ease-out hover:scale-[1.03] hover:border-primary hover:shadow-lg cursor-pointer">
+    <!-- Section 4: Logout Button Box (Slides in from LEFT) -->
+    <div
+      class="p-6 rounded-2xl border-2 border-primary/40 dark:border-border-dark shadow-sm flex items-center justify-between transition-all duration-700 ease-out hover:scale-[1.03] hover:border-primary hover:shadow-lg cursor-pointer transform-gpu"
+      :class="isPageLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'"
+      :style="{ transitionDelay: isPageLoaded ? '1040ms' : '0ms' }"
+    >
       <div>
         <p class="text-xs font-bold text-primary uppercase tracking-wider mb-1">Account Session</p>
         <p class="font-extrabold text-text dark:text-text-dark text-base">Sign out of your store account</p>
