@@ -27,12 +27,12 @@ function toggleMobileMenu() {
         </RouterLink>
 
         <!-- Desktop search -->
-        <div class="hidden md:block flex-1 max-w-md mx-8">
+        <div class="hidden md:block flex-1 max-w-lg ml-6 mr-4">
           <SearchBar />
         </div>
 
-        <!-- Desktop right side -->
-        <div class="hidden md:flex items-center gap-3">
+        <!-- Desktop right side (shifted forward right) -->
+        <div class="hidden md:flex items-center gap-3.5 ml-auto">
           <ThemeToggle />
           <CartIcon />
           
