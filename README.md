@@ -1,14 +1,14 @@
-# 🛒 CMWA Market Shop
+# 🛒 CMWA Marketing Store
 
-A modern, responsive, full-featured e-commerce web application built with **Vue 3**, **TypeScript**, **Pinia**, **Vue Router**, and **Tailwind CSS v4**, powered by the **DummyJSON API**.
+A modern, high-performance, full-featured e-commerce web application built with **Vue 3**, **TypeScript**, **Pinia**, **Vue Router**, and **Tailwind CSS v4**, powered by the **DummyJSON API**.
 
 🌐 **Live Demo / Deployment URL:** [https://cmwa-market-shop.vercel.app/](https://cmwa-market-shop.vercel.app/)
 
 ---
 
-## 📌 Project Description
+## 📌 Project Overview
 
-**CMWA Market Shop** is a feature-rich e-commerce store application designed for a smooth and intuitive shopping experience. Users can browse products across multiple categories, search dynamically, filter products, view comprehensive product details, manage their shopping cart, authenticate (Login & Register), and toggle between Dark and Light modes with persistent state management.
+**CMWA Marketing Store** is a state-of-the-art e-commerce web application engineered for an exceptional shopping experience. Featuring a warm sand color aesthetic (`#E3DAC9`), crisp card containers, dynamic currency conversion (`$ USD` / `Rs. LKR`), multi-language settings, interactive favorites management, and fluid animations.
 
 ---
 
@@ -25,42 +25,56 @@ A modern, responsive, full-featured e-commerce web application built with **Vue 
 
 ---
 
-## ✨ Key Features
+## ✨ Key Features & Highlights
 
-- 🔍 **Product Discovery & Search:**
-  - Real-time product search with instant filtering.
-  - Category filtering and sorting options.
-- 📦 **Detailed Product View:**
-  - Image gallery, pricing, stock status, ratings, brand info, and product specifications.
-- 🛒 **Interactive Shopping Cart:**
-  - Add to cart, adjust quantities, remove items, and clear cart.
-  - Dynamic price computation and persistent cart state.
-- 🔐 **User Authentication:**
-  - User registration and login views with form validation.
-  - Persistent authentication state managed via Pinia store.
-- 🌙 **Dark / Light Theme Toggle:**
-  - Seamless dark mode support with persistent user preferences.
-- 📱 **Responsive Design:**
-  - Modern, adaptive UI built for mobile, tablet, and desktop viewports.
+### 1. 🛍️ Product Discovery & Comprehensive Search
+- **Multi-Field Smart Search:** Searches across Title, Description, Category, Brand, and Tags simultaneously.
+- **Category Filtering & Sorting:** Instant category filter pills with responsive horizontal layout.
+- **Dynamic Currency Formatting:** Prices automatically adjust based on selected currency (`$ USD` or `Rs. LKR`).
+
+### 2. 👤 "My Account" Page (`/account`)
+- **Profile Information:** Displays user First Name, Last Name, and Registered Email Address in elegant rounded rectangle cards.
+- **Staggered Entrance Animation:** Cards glide in from the left and right sides to align perfectly in the center upon page load.
+- **Interactive Cursor Hover Effects:** Cards scale up smoothly (`hover:scale-[1.03]`) with border glow transitions on hover.
+- **Notification Preferences:** Interactive toggle switch to turn notifications **ON / OFF**.
+- **Currency Switcher:** Seamlessly switch between **$ USD** and **Rs. LKR** (1 USD = 300 LKR) with global price updates.
+- **Language Preference:** Select store language between **English 🇬🇧**, **Sinhala (සිංහල) 🇱🇰**, and **Tamil (தமிழ்) 🇱🇰**.
+- **My Favourites:** View favorited products saved via the Product Detail page, with individual item remove buttons (`✕`) and a "Clear All Favourites" action.
+- **Account Logout:** Secure sign-out action card.
+
+### 3. 🎨 Hero Banner & Sequential Letter Wave Animation
+- **Hero Title Animation:** Sequential letter-by-letter wave scale pulse (`"WELCOME TO CMWA MARKETING STORE"`) running once on page load.
+- **Responsive Layout:** Automatically scales and wraps on mobile, tablet, laptop, and PC displays.
+
+### 4. 🧭 Balanced Header Navigation (`NavBar.vue`)
+- **Left Corner:** Store logo (`🛒 CMWA MARKETING STORE`).
+- **Center:** Search bar centered in the middle.
+- **Right Corner:** 5 main features (**Theme Toggle**, **Cart Icon**, **Login**, **My Account**, **About Us**).
+- **Responsive Mobile Menu:** Clean dropdown menu with full-width pill buttons for mobile phones and tablets.
+
+### 5. ℹ️ "About Us" Page (`/about`)
+- **Typewriter Animation:** Smooth forward-only typewriter animation loop for the store description.
+- **Contact Us Grid:** Rounded rectangle contact cards with hover scale effects.
+
+### 6. 💳 Shopping Cart & Dual Checkout Options
+- **Cart Management:** Add to cart, adjust quantities, remove items, clear cart, and real-time total computation.
+- **Cash on Delivery (COD):** Dedicated Cash on Delivery checkout page (`/checkout/cod`).
+- **Online Payment:** Dedicated Online Card Payment checkout page (`/checkout/online`).
 
 ---
 
 ## 🌐 Deployment URL
 
-The application is deployed and live at:
+The application is live and accessible at:
 👉 **[https://cmwa-market-shop.vercel.app/](https://cmwa-market-shop.vercel.app/)**
 
 ---
 
 ## 💻 Local Setup and Run Instructions
 
-Follow these steps to run the project locally on your machine.
-
 ### Prerequisites
-
-Ensure you have the following installed on your system:
 - **Node.js**: `v18.0.0` or higher
-- **npm** (comes with Node.js) or **pnpm** / **yarn**
+- **npm** (included with Node.js)
 
 ### 1. Clone the Repository
 
@@ -81,13 +95,13 @@ npm install
 npm run dev
 ```
 
-The application will be accessible at: `http://localhost:5173`
+Application local address: `http://localhost:5173`
 
 ---
 
-## 🏗️ Build and Preview
+## 🏗️ Production Build & Verification
 
-To create an optimized production build:
+To build for production:
 
 ```bash
 npm run build
@@ -105,18 +119,18 @@ npm run preview
 
 ```text
 anushkas-assignment/
-├── public/              # Static public assets
+├── public/              # Static public assets (hero video, favicon)
 ├── src/
-│   ├── api/             # API integration (DummyJSON service)
-│   ├── assets/          # Global assets & styles
-│   ├── components/      # Reusable Vue components (NavBar, ProductCard, SearchBar, etc.)
-│   ├── router/          # Vue Router configuration
-│   ├── stores/          # Pinia stores (auth, cart, theme)
-│   ├── types/           # TypeScript interfaces & types
-│   ├── views/           # Page views (Home, Cart, ProductDetail, Login, Register)
-│   ├── App.vue          # Root component
+│   ├── api/             # API service layer (DummyJSON API)
+│   ├── assets/          # Global styles & brand assets
+│   ├── components/      # Reusable Vue components (NavBar, ProductCard, SearchBar, ThemeToggle, CartIcon, FilterBar)
+│   ├── router/          # Vue Router route definitions (/ , /product/:id, /cart, /account, /about, /checkout/*)
+│   ├── stores/          # Pinia stores (account, auth, cart, theme)
+│   ├── types/           # TypeScript data interfaces
+│   ├── views/           # Page views (HomeView, AccountView, AboutView, ProductDetailView, CartView, CheckoutCodView, CheckoutOnlineView, LoginView, RegisterView)
+│   ├── App.vue          # Root component layout
 │   └── main.ts          # Application entry point
-├── package.json         # Project dependencies and scripts
+├── package.json         # Project metadata and dependencies
 ├── vite.config.ts       # Vite build configuration
 └── README.md            # Project documentation
 ```
