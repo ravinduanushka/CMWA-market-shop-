@@ -236,9 +236,9 @@ function clearAllFavorites() {
       </div>
 
       <div v-if="accountStore.favorites.length === 0" class="p-8 rounded-2xl border-2 border-primary/40 dark:border-border-dark shadow-sm text-center transition-all duration-300 ease-out hover:scale-[1.02] hover:border-primary hover:shadow-lg">
-        <p class="text-4xl mb-2">🤍</p>
+        <p class="text-4xl mb-2"></p>
         <p class="font-semibold text-text dark:text-text-dark">No favourite items added yet.</p>
-        <p class="text-xs text-text-muted dark:text-text-muted-dark mt-1">Click the heart ❤️ on any product detail page to save it here!</p>
+        
       </div>
 
       <div v-else class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
