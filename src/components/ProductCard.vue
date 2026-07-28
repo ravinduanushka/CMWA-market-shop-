@@ -3,6 +3,7 @@ import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { RouterLink } from 'vue-router'
 import type { Product } from '../types'
 import { useCartStore } from '../stores/cart'
+import { useAccountStore } from '../stores/account'
 
 const props = withDefaults(defineProps<{
   product: Product
@@ -12,6 +13,7 @@ const props = withDefaults(defineProps<{
 })
 
 const cartStore = useCartStore()
+const accountStore = useAccountStore()
 
 const cardRef = ref<HTMLElement | null>(null)
 const isVisible = ref(false)
@@ -101,6 +103,15 @@ function handleAddToCart(event: Event) {
           <span class="text-amber-500">★</span>
           <span class="text-text dark:text-text-dark">{{ product.rating.toFixed(1) }}</span>
         </div>
+        <!-- Favorite Heart Button -->
+        <button
+          @click.prevent.stop="accountStore.toggleFavorite(product.id)"
+          class="absolute bottom-3 right-3 w-9 h-9 rounded-full bg-white/90 dark:bg-surface-card-dark/90 backdrop-blur-md border border-primary/30 shadow-md flex items-center justify-center text-base transition-transform hover:scale-110 active:scale-90 cursor-pointer"
+          :title="accountStore.isFavorite(product.id) ? 'Remove from favorites' : 'Add to favorites'"
+        >
+          <span v-if="accountStore.isFavorite(product.id)" class="text-red-500">❤️</span>
+          <span v-else class="text-gray-400 hover:text-red-400">🤍</span>
+        </button>
       </div>
 
       <!-- Content -->
@@ -128,9 +139,9 @@ function handleAddToCart(event: Event) {
         <!-- Price and Add to cart -->
         <div class="flex items-end justify-between pt-2">
           <div>
-            <p class="text-lg font-bold text-primary">${{ discountedPrice.toFixed(2) }}</p>
+            <p class="text-lg font-bold text-primary">{{ accountStore.formatPrice(discountedPrice) }}</p>
             <p v-if="product.discountPercentage > 5" class="text-xs text-text-muted dark:text-text-muted-dark line-through">
-              ${{ product.price.toFixed(2) }}
+              {{ accountStore.formatPrice(product.price) }}
             </p>
           </div>
           <button

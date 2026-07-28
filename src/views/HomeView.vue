@@ -15,6 +15,7 @@ const loading = ref(true)
 const error = ref<string | null>(null)
 
 const searchQuery = computed(() => (route.query.q as string) || '')
+const heroTitleLetters = 'WELCOME TO CMWA MARKETING STORE'.split('')
 
 /** Load products based on current search/filter state */
 async function loadProducts() {
@@ -80,9 +81,15 @@ onMounted(() => {
       <div class="absolute inset-0 bg-black/25"></div>
       <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-36">
         <div class="text-center max-w-5xl mx-auto">
-          <h1 class="text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold tracking-tight mb-4 whitespace-nowrap drop-shadow-md">
-            <span class="text-white">
-              WELCOME TO CMWA MARKETING STORE
+          <h1 class="text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold tracking-tight mb-4 whitespace-nowrap drop-shadow-md select-none">
+            <span
+              v-for="(char, index) in heroTitleLetters"
+              :key="index"
+              class="wave-letter"
+              :class="{ 'inline-block w-[0.25em]': char === ' ' }"
+              :style="{ animationDelay: `${index * 70}ms` }"
+            >
+              {{ char === ' ' ? '\u00A0' : char }}
             </span>
           </h1>
           <p class="text-lg sm:text-xl text-white/90 max-w-2xl mx-auto drop-shadow">

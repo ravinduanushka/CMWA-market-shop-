@@ -126,3 +126,28 @@ html.dark select,
 html.dark textarea {
   background-color: var(--color-surface-card-dark);
 }
+
+/* Hero Title Letter Wave Pulse Animation (Runs once on page load) */
+@keyframes letterWave {
+  0% {
+    transform: scale(1) translateY(0);
+    color: #ffffff;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  }
+  35% {
+    transform: scale(1.35) translateY(-6px);
+    color: #ffdf9e;
+    text-shadow: 0 10px 25px rgba(194, 136, 77, 0.9), 0 0 20px rgba(255, 255, 255, 0.9);
+  }
+  100% {
+    transform: scale(1) translateY(0);
+    color: #ffffff;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  }
+}
+
+.wave-letter {
+  display: inline-block;
+  will-change: transform;
+  animation: letterWave 2.2s 1 cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
