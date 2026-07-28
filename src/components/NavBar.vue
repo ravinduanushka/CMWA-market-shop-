@@ -35,37 +35,34 @@ function toggleMobileMenu() {
         <div class="hidden md:flex items-center gap-3">
           <ThemeToggle />
           <CartIcon />
-          <!-- Login / User -->
+          
+          <!-- Login Button -->
           <template v-if="authStore.isLoggedIn">
-            <RouterLink
-              to="/account"
-              class="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary/10 dark:bg-primary/20 hover:bg-primary/20 transition-all cursor-pointer"
+            <button
+              @click="authStore.logout()"
+              class="px-4 py-2 rounded-full bg-primary text-white font-medium text-sm hover:bg-primary-dark transition-colors duration-200 shadow-sm cursor-pointer"
             >
-              <img
-                :src="authStore.user?.image"
-                :alt="authStore.displayName"
-                class="w-7 h-7 rounded-full object-cover ring-2 ring-primary"
-              />
-              <span class="text-sm font-bold text-text dark:text-text-dark">My Account</span>
-            </RouterLink>
+              Logout
+            </button>
           </template>
-          <div v-else class="flex items-center gap-3">
-            <RouterLink
-              to="/account"
-              class="text-sm font-semibold text-text dark:text-text-dark hover:text-primary transition-colors px-3 py-1.5 rounded-full hover:bg-primary/10"
-            >
-              My Account
-            </RouterLink>
-            <RouterLink
-              to="/login"
-              class="flex items-center gap-1.5 px-4 py-2 rounded-full bg-primary text-white font-medium text-sm hover:bg-primary-dark transition-colors duration-200"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
-              Login
-            </RouterLink>
-          </div>
+          <RouterLink
+            v-else
+            to="/login"
+            class="flex items-center gap-1.5 px-4 py-2 rounded-full bg-primary text-white font-medium text-sm hover:bg-primary-dark transition-colors duration-200 shadow-sm"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+            Login
+          </RouterLink>
 
-          <!-- About Us Button (Same pill button style as Login, placed on the right of Login) -->
+          <!-- My Account Button (Styled same as Login & About Us, placed in between) -->
+          <RouterLink
+            to="/account"
+            class="px-4 py-2 rounded-full bg-primary text-white font-medium text-sm hover:bg-primary-dark transition-colors duration-200 shadow-sm"
+          >
+            My Account
+          </RouterLink>
+
+          <!-- About Us Button -->
           <RouterLink
             to="/about"
             class="px-4 py-2 rounded-full bg-primary text-white font-medium text-sm hover:bg-primary-dark transition-colors duration-200 shadow-sm"
