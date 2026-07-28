@@ -81,7 +81,7 @@ onMounted(() => {
       <div class="absolute inset-0 bg-black/25"></div>
       <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-36">
         <div class="text-center max-w-5xl mx-auto">
-          <h1 class="text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold tracking-tight mb-4 whitespace-nowrap drop-shadow-md select-none">
+          <h1 class="text-base xs:text-xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4 drop-shadow-md select-none leading-snug sm:whitespace-nowrap flex flex-wrap justify-center">
             <span
               v-for="(char, index) in heroTitleLetters"
               :key="index"

@@ -21,8 +21,9 @@ function toggleMobileMenu() {
         <!-- Logo (Left Corner) -->
         <RouterLink to="/" class="flex items-center gap-2 group flex-shrink-0">
           <span class="text-2xl sm:text-3xl">🛒</span>
-          <span class="text-lg sm:text-xl font-extrabold text-primary tracking-tight group-hover:text-primary-dark transition-colors whitespace-nowrap">
-            CMWA MARKETING STORE
+          <span class="text-base sm:text-xl font-extrabold text-primary tracking-tight group-hover:text-primary-dark transition-colors whitespace-nowrap">
+            <span class="hidden xs:inline sm:inline">CMWA MARKETING STORE</span>
+            <span class="inline xs:hidden sm:hidden">CMWA STORE</span>
           </span>
         </RouterLink>
 
@@ -54,7 +55,7 @@ function toggleMobileMenu() {
             Login
           </RouterLink>
 
-          <!-- My Account Button (Styled same as Login & About Us, placed in between) -->
+          <!-- My Account Button (Styled same as Login & About Us) -->
           <RouterLink
             to="/account"
             class="px-4 py-2 rounded-full bg-primary text-white font-medium text-sm hover:bg-primary-dark transition-colors duration-200 shadow-sm"
@@ -75,7 +76,7 @@ function toggleMobileMenu() {
         <div class="md:hidden flex items-center gap-2">
           <ThemeToggle />
           <CartIcon />
-          <button @click="toggleMobileMenu" class="p-2 rounded-lg hover:bg-border/50 dark:hover:bg-border-dark/50 transition-colors cursor-pointer">
+          <button @click="toggleMobileMenu" class="p-2 rounded-lg hover:bg-border/50 dark:hover:bg-border-dark/50 transition-colors cursor-pointer" aria-label="Toggle Navigation Menu">
             <svg v-if="!mobileMenuOpen" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
             </svg>
@@ -89,46 +90,43 @@ function toggleMobileMenu() {
 
     <!-- Mobile menu -->
     <transition name="fade">
-      <div v-if="mobileMenuOpen" class="md:hidden border-t border-border dark:border-border-dark px-4 py-4 space-y-3 bg-surface/95 dark:bg-surface-dark/95 backdrop-blur-xl">
+      <div v-if="mobileMenuOpen" class="md:hidden border-t border-border dark:border-border-dark px-4 py-5 space-y-3 bg-surface/95 dark:bg-surface-dark/95 backdrop-blur-xl shadow-xl">
         <SearchBar @searched="mobileMenuOpen = false" />
-        <RouterLink
-          to="/account"
-          @click="mobileMenuOpen = false"
-          class="block text-center px-4 py-2 rounded-xl text-text dark:text-text-dark font-semibold text-sm hover:text-primary transition-colors border border-border/40"
-        >
-          👤 My Account
-        </RouterLink>
-        <RouterLink
-          to="/about"
-          @click="mobileMenuOpen = false"
-          class="block text-center px-4 py-2 rounded-full bg-primary text-white font-medium text-sm hover:bg-primary-dark transition-colors"
-        >
-          About Us
-        </RouterLink>
-        <template v-if="authStore.isLoggedIn">
-          <div class="flex items-center gap-2">
-            <img
-              :src="authStore.user?.image"
-              :alt="authStore.displayName"
-              class="w-8 h-8 rounded-full object-cover"
-            />
-            <span class="font-medium text-text dark:text-text-dark">{{ authStore.displayName }}</span>
-          </div>
+        
+        <div class="grid grid-cols-1 gap-2.5 pt-2">
+          <RouterLink
+            v-if="!authStore.isLoggedIn"
+            to="/login"
+            @click="mobileMenuOpen = false"
+            class="block text-center px-4 py-2.5 rounded-full bg-primary text-white font-bold text-sm hover:bg-primary-dark transition-colors shadow-sm"
+          >
+            Login
+          </RouterLink>
+          
+          <RouterLink
+            to="/account"
+            @click="mobileMenuOpen = false"
+            class="block text-center px-4 py-2.5 rounded-full bg-primary text-white font-bold text-sm hover:bg-primary-dark transition-colors shadow-sm"
+          >
+            My Account
+          </RouterLink>
+
+          <RouterLink
+            to="/about"
+            @click="mobileMenuOpen = false"
+            class="block text-center px-4 py-2.5 rounded-full bg-primary text-white font-bold text-sm hover:bg-primary-dark transition-colors shadow-sm"
+          >
+            About Us
+          </RouterLink>
+
           <button
+            v-if="authStore.isLoggedIn"
             @click="authStore.logout(); mobileMenuOpen = false"
-            class="block w-full text-left text-sm text-text-muted dark:text-text-muted-dark hover:text-primary transition-colors cursor-pointer"
+            class="w-full text-center px-4 py-2.5 rounded-full bg-red-500 text-white font-bold text-sm hover:bg-red-600 transition-colors shadow-sm cursor-pointer"
           >
             Logout
           </button>
-        </template>
-        <RouterLink
-          v-else
-          to="/login"
-          @click="mobileMenuOpen = false"
-          class="block text-center px-4 py-2 rounded-full bg-primary text-white font-medium text-sm hover:bg-primary-dark transition-colors"
-        >
-          Login
-        </RouterLink>
+        </div>
       </div>
     </transition>
   </nav>
