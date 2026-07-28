@@ -103,14 +103,14 @@ onMounted(async () => {
           >
             -{{ Math.round(product.discountPercentage) }}% OFF
           </div>
-          <!-- Favorite Heart Button -->
+          <!-- Favorite Heart Button (Displayed on Product Detail Page) -->
           <button
             @click="accountStore.toggleFavorite(product.id)"
-            class="absolute top-4 right-4 w-11 h-11 rounded-full bg-white/90 dark:bg-surface-card-dark/90 backdrop-blur-md border border-primary/30 shadow-lg flex items-center justify-center text-xl transition-transform hover:scale-110 active:scale-95 cursor-pointer"
+            class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white shadow-md border border-gray-200/80 dark:border-border-dark flex items-center justify-center text-lg transition-transform hover:scale-110 active:scale-95 cursor-pointer"
             :title="accountStore.isFavorite(product.id) ? 'Remove from favorites' : 'Add to favorites'"
           >
-            <span v-if="accountStore.isFavorite(product.id)" class="text-red-500">❤️</span>
-            <span v-else class="text-gray-400 hover:text-red-400">🤍</span>
+            <span v-if="accountStore.isFavorite(product.id)">❤️</span>
+            <span v-else>💜</span>
           </button>
         </div>
         <!-- Thumbnails -->
