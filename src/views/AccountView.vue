@@ -45,6 +45,17 @@ function handleLogout() {
   authStore.logout()
   router.push('/login')
 }
+
+function removeFavorite(productId: number) {
+  accountStore.toggleFavorite(productId)
+  favoriteProducts.value = favoriteProducts.value.filter(p => p.id !== productId)
+}
+
+function clearAllFavorites() {
+  const ids = [...accountStore.favorites]
+  ids.forEach(id => accountStore.toggleFavorite(id))
+  favoriteProducts.value = []
+}
 </script>
 
 <template>
@@ -151,7 +162,7 @@ function handleLogout() {
             @click="accountStore.toggleNotifications()"
             class="px-4 py-2 rounded-full bg-primary text-white font-bold text-xs hover:bg-primary-dark transition-colors shadow-sm cursor-pointer self-start"
           >
-            Toggle {{ accountStore.notificationsEnabled ? 'OFF 🔕' : 'ON 🔔' }}
+            Toggle {{ accountStore.notificationsEnabled ? 'OFF ' : 'ON ' }}
           </button>
         </div>
 
@@ -213,22 +224,39 @@ function handleLogout() {
     >
       <div class="border-b-2 border-primary/40 pb-2 flex items-center justify-between">
         <h2 class="text-xl font-extrabold text-text dark:text-text-dark">
-          My Favourites (❤️ {{ accountStore.favorites.length }})
+          My Favourites ( {{ accountStore.favorites.length }})
         </h2>
+        <button
+          v-if="accountStore.favorites.length > 0"
+          @click="clearAllFavorites"
+          class="px-3.5 py-1.5 rounded-full bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 border border-red-300 dark:border-red-800 text-xs font-bold hover:bg-red-500 hover:text-white transition-all duration-200 cursor-pointer shadow-sm"
+        >
+          Clear All Favourites
+        </button>
       </div>
 
       <div v-if="accountStore.favorites.length === 0" class="p-8 rounded-2xl border-2 border-primary/40 dark:border-border-dark shadow-sm text-center transition-all duration-300 ease-out hover:scale-[1.02] hover:border-primary hover:shadow-lg">
         <p class="text-4xl mb-2">🤍</p>
         <p class="font-semibold text-text dark:text-text-dark">No favourite items added yet.</p>
-        <p class="text-xs text-text-muted dark:text-text-muted-dark mt-1">Click the heart ❤️ on any product to save it here!</p>
+        <p class="text-xs text-text-muted dark:text-text-muted-dark mt-1">Click the heart ❤️ on any product detail page to save it here!</p>
       </div>
 
       <div v-else class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        <ProductCard
+        <div
           v-for="product in favoriteProducts"
           :key="product.id"
-          :product="product"
-        />
+          class="relative group"
+        >
+          <!-- Individual Remove Favorite Button -->
+          <button
+            @click.stop.prevent="removeFavorite(product.id)"
+            class="absolute top-3 right-3 z-20 w-8 h-8 rounded-full bg-white/95 dark:bg-surface-card-dark/95 shadow-md border border-red-300 text-red-500 hover:bg-red-500 hover:text-white flex items-center justify-center text-xs font-bold transition-all duration-200 cursor-pointer hover:scale-110 active:scale-95"
+            title="Remove from Favourites"
+          >
+            ✕
+          </button>
+          <ProductCard :product="product" />
+        </div>
       </div>
     </div>
 

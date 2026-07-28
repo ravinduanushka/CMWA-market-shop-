@@ -22,7 +22,7 @@ const emit = defineEmits<{
           : 'bg-surface-card dark:bg-surface-card-dark border-primary/30 dark:border-border-dark text-text dark:text-text-dark hover:border-primary hover:shadow-sm'
       ]"
     >
-      🍽️ All
+       All
     </button>
     <button
       v-for="cat in categories"

@@ -81,7 +81,7 @@ onMounted(async () => {
 
     <!-- Error -->
     <div v-else-if="error" class="text-center py-16">
-      <p class="text-5xl mb-4">😞</p>
+      <p class="text-5xl mb-4"></p>
       <p class="text-xl font-semibold text-text dark:text-text-dark mb-2">Product not found</p>
       <p class="text-text-muted dark:text-text-muted-dark">{{ error }}</p>
     </div>
