@@ -52,7 +52,7 @@ A modern, high-performance, full-featured e-commerce web application built with 
 - **Right Corner:** 5 main features (**Theme Toggle**, **Cart Icon**, **Login**, **My Account**, **About Us**).
 - **Responsive Mobile Menu:** Clean dropdown menu with full-width pill buttons for mobile phones and tablets.
 
-### 5. ℹ "About Us" Page (`/about`)
+### 5.  "About Us" Page (`/about`)
 - **Typewriter Animation:** Smooth forward-only typewriter animation loop for the store description.
 - **Contact Us Grid:** Rounded rectangle contact cards with hover scale effects.
 
