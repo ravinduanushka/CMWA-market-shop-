@@ -16,23 +16,23 @@ function toggleMobileMenu() {
 
 <template>
   <nav class="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-surface/80 dark:bg-surface-dark/80 border-b border-border dark:border-border-dark shadow-sm transition-colors duration-300">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16">
-        <!-- Logo -->
-        <RouterLink to="/" class="flex items-center gap-2 group">
-          <span class="text-3xl">🛒</span>
-          <span class="text-xl font-extrabold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+    <div class="w-full px-4 sm:px-6 lg:px-10">
+      <div class="flex items-center justify-between h-16 gap-4">
+        <!-- Logo (Left Corner) -->
+        <RouterLink to="/" class="flex items-center gap-2 group flex-shrink-0">
+          <span class="text-2xl sm:text-3xl">🛒</span>
+          <span class="text-lg sm:text-xl font-extrabold text-primary tracking-tight group-hover:text-primary-dark transition-colors whitespace-nowrap">
             CMWA MARKETING STORE
           </span>
         </RouterLink>
 
-        <!-- Desktop search -->
-        <div class="hidden md:block flex-1 max-w-lg ml-6 mr-4">
+        <!-- Desktop search (Middle) -->
+        <div class="hidden md:block flex-1 max-w-md mx-auto">
           <SearchBar />
         </div>
 
-        <!-- Desktop right side (shifted forward right) -->
-        <div class="hidden md:flex items-center gap-3.5 ml-auto">
+        <!-- Desktop right side (Right Corner - 5 Features) -->
+        <div class="hidden md:flex items-center gap-3.5 flex-shrink-0">
           <ThemeToggle />
           <CartIcon />
           
