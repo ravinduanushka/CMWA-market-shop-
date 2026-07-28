@@ -79,7 +79,7 @@ onUnmounted(() => {
 
     <!-- Part 1: Description Section with Typewriter in Rectangle Box -->
     <section class="transition-all duration-300">
-      <div class="p-6 sm:p-8 rounded-2xl border-2 border-primary/40 dark:border-border-dark shadow-sm min-h-[160px]">
+      <div class="p-6 sm:p-8 rounded-2xl border-2 border-primary/40 dark:border-border-dark shadow-sm min-h-[160px] transition-all duration-300 ease-out hover:scale-[1.02] hover:border-primary hover:shadow-lg cursor-pointer">
         <p class="text-lg sm:text-xl text-text dark:text-text-dark leading-relaxed font-semibold tracking-wide">
           {{ displayedText }}
           <span class="inline-block w-2.5 h-6 bg-primary ml-1 rounded-sm animate-pulse align-middle shadow-sm"></span>
@@ -107,7 +107,7 @@ onUnmounted(() => {
           <!-- Email Box -->
           <a
             href="mailto:info@CMWAmarketingstore.com"
-            class="group p-6 rounded-2xl border-2 border-primary/40 dark:border-border-dark hover:border-primary transition-all duration-200 shadow-sm hover:shadow-md block"
+            class="group p-6 rounded-2xl border-2 border-primary/40 dark:border-border-dark hover:border-primary transition-all duration-300 ease-out hover:scale-[1.03] shadow-sm hover:shadow-lg block cursor-pointer"
           >
             <div>
               <p class="text-xs font-bold text-primary uppercase tracking-wider mb-1.5">Email Us</p>
@@ -120,7 +120,7 @@ onUnmounted(() => {
           <!-- Phone Box -->
           <a
             href="tel:+94771234567"
-            class="group p-6 rounded-2xl border-2 border-primary/40 dark:border-border-dark hover:border-primary transition-all duration-200 shadow-sm hover:shadow-md block"
+            class="group p-6 rounded-2xl border-2 border-primary/40 dark:border-border-dark hover:border-primary transition-all duration-300 ease-out hover:scale-[1.03] shadow-sm hover:shadow-lg block cursor-pointer"
           >
             <div>
               <p class="text-xs font-bold text-primary uppercase tracking-wider mb-1.5">Call Us</p>
@@ -131,7 +131,7 @@ onUnmounted(() => {
           </a>
 
           <!-- Location Box -->
-          <div class="p-6 rounded-2xl border-2 border-primary/40 dark:border-border-dark shadow-sm block">
+          <div class="p-6 rounded-2xl border-2 border-primary/40 dark:border-border-dark shadow-sm transition-all duration-300 ease-out hover:scale-[1.03] hover:border-primary hover:shadow-lg block cursor-pointer">
             <div>
               <p class="text-xs font-bold text-primary uppercase tracking-wider mb-1.5">Store Address</p>
               <p class="font-extrabold text-text dark:text-text-dark text-base sm:text-lg">
@@ -141,7 +141,7 @@ onUnmounted(() => {
           </div>
 
           <!-- Hours Box -->
-          <div class="p-6 rounded-2xl border-2 border-primary/40 dark:border-border-dark shadow-sm block">
+          <div class="p-6 rounded-2xl border-2 border-primary/40 dark:border-border-dark shadow-sm transition-all duration-300 ease-out hover:scale-[1.03] hover:border-primary hover:shadow-lg block cursor-pointer">
             <div>
               <p class="text-xs font-bold text-primary uppercase tracking-wider mb-1.5">Business Hours</p>
               <p class="font-extrabold text-text dark:text-text-dark text-base sm:text-lg">

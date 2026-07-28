@@ -68,7 +68,7 @@ function handleLogout() {
       
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <!-- First Name Box -->
-        <div class="p-6 rounded-2xl border-2 border-primary/40 dark:border-border-dark shadow-sm">
+        <div class="p-6 rounded-2xl border-2 border-primary/40 dark:border-border-dark shadow-sm transition-all duration-300 ease-out hover:scale-[1.03] hover:border-primary hover:shadow-lg cursor-pointer">
           <p class="text-xs font-bold text-primary uppercase tracking-wider mb-1.5">First Name</p>
           <p class="font-extrabold text-text dark:text-text-dark text-base sm:text-lg">
             {{ authStore.user?.firstName || 'Ravindu' }}
@@ -76,7 +76,7 @@ function handleLogout() {
         </div>
 
         <!-- Last Name Box -->
-        <div class="p-6 rounded-2xl border-2 border-primary/40 dark:border-border-dark shadow-sm">
+        <div class="p-6 rounded-2xl border-2 border-primary/40 dark:border-border-dark shadow-sm transition-all duration-300 ease-out hover:scale-[1.03] hover:border-primary hover:shadow-lg cursor-pointer">
           <p class="text-xs font-bold text-primary uppercase tracking-wider mb-1.5">Last Name</p>
           <p class="font-extrabold text-text dark:text-text-dark text-base sm:text-lg">
             {{ authStore.user?.lastName || 'Anushka' }}
@@ -85,7 +85,7 @@ function handleLogout() {
       </div>
 
       <!-- Email Address Box -->
-      <div class="p-6 rounded-2xl border-2 border-primary/40 dark:border-border-dark shadow-sm">
+      <div class="p-6 rounded-2xl border-2 border-primary/40 dark:border-border-dark shadow-sm transition-all duration-300 ease-out hover:scale-[1.03] hover:border-primary hover:shadow-lg cursor-pointer">
         <p class="text-xs font-bold text-primary uppercase tracking-wider mb-1.5">Email Address</p>
         <p class="font-extrabold text-text dark:text-text-dark text-base sm:text-lg break-all">
           {{ authStore.user?.email || 'ravindu@example.com' }}
@@ -100,7 +100,7 @@ function handleLogout() {
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         
         <!-- Notifications Card -->
-        <div class="p-6 rounded-2xl border-2 border-primary/40 dark:border-border-dark shadow-sm flex flex-col justify-between space-y-4">
+        <div class="p-6 rounded-2xl border-2 border-primary/40 dark:border-border-dark shadow-sm flex flex-col justify-between space-y-4 transition-all duration-300 ease-out hover:scale-[1.03] hover:border-primary hover:shadow-lg cursor-pointer">
           <div>
             <p class="text-xs font-bold text-primary uppercase tracking-wider mb-1.5">Notifications</p>
             <p class="font-extrabold text-text dark:text-text-dark text-base">
@@ -117,7 +117,7 @@ function handleLogout() {
         </div>
 
         <!-- Currency Card -->
-        <div class="p-6 rounded-2xl border-2 border-primary/40 dark:border-border-dark shadow-sm flex flex-col justify-between space-y-4">
+        <div class="p-6 rounded-2xl border-2 border-primary/40 dark:border-border-dark shadow-sm flex flex-col justify-between space-y-4 transition-all duration-300 ease-out hover:scale-[1.03] hover:border-primary hover:shadow-lg cursor-pointer">
           <div>
             <p class="text-xs font-bold text-primary uppercase tracking-wider mb-1.5">Currency</p>
             <p class="font-extrabold text-text dark:text-text-dark text-base">
@@ -136,7 +136,7 @@ function handleLogout() {
         </div>
 
         <!-- Language Card -->
-        <div class="p-6 rounded-2xl border-2 border-primary/40 dark:border-border-dark shadow-sm flex flex-col justify-between space-y-4">
+        <div class="p-6 rounded-2xl border-2 border-primary/40 dark:border-border-dark shadow-sm flex flex-col justify-between space-y-4 transition-all duration-300 ease-out hover:scale-[1.03] hover:border-primary hover:shadow-lg cursor-pointer">
           <div>
             <p class="text-xs font-bold text-primary uppercase tracking-wider mb-1.5">Language</p>
             <p class="font-extrabold text-text dark:text-text-dark text-base">
@@ -166,7 +166,7 @@ function handleLogout() {
         </h2>
       </div>
 
-      <div v-if="accountStore.favorites.length === 0" class="p-8 rounded-2xl border-2 border-primary/40 dark:border-border-dark shadow-sm text-center">
+      <div v-if="accountStore.favorites.length === 0" class="p-8 rounded-2xl border-2 border-primary/40 dark:border-border-dark shadow-sm text-center transition-all duration-300 ease-out hover:scale-[1.02] hover:border-primary hover:shadow-lg">
         <p class="text-4xl mb-2">🤍</p>
         <p class="font-semibold text-text dark:text-text-dark">No favourite items added yet.</p>
         <p class="text-xs text-text-muted dark:text-text-muted-dark mt-1">Click the heart ❤️ on any product to save it here!</p>
@@ -182,7 +182,7 @@ function handleLogout() {
     </div>
 
     <!-- Section 4: Logout Button Box -->
-    <div class="p-6 rounded-2xl border-2 border-primary/40 dark:border-border-dark shadow-sm flex items-center justify-between">
+    <div class="p-6 rounded-2xl border-2 border-primary/40 dark:border-border-dark shadow-sm flex items-center justify-between transition-all duration-300 ease-out hover:scale-[1.03] hover:border-primary hover:shadow-lg cursor-pointer">
       <div>
         <p class="text-xs font-bold text-primary uppercase tracking-wider mb-1">Account Session</p>
         <p class="font-extrabold text-text dark:text-text-dark text-base">Sign out of your store account</p>
