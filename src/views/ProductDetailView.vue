@@ -4,10 +4,12 @@ import { useRoute, useRouter } from 'vue-router'
 import type { Product } from '../types'
 import { fetchProduct } from '../api/dummyjson'
 import { useCartStore } from '../stores/cart'
+import { useAccountStore } from '../stores/account'
 
 const route = useRoute()
 const router = useRouter()
 const cartStore = useCartStore()
+const accountStore = useAccountStore()
 
 const product = ref<Product | null>(null)
 const loading = ref(true)
@@ -101,6 +103,15 @@ onMounted(async () => {
           >
             -{{ Math.round(product.discountPercentage) }}% OFF
           </div>
+          <!-- Favorite Heart Button -->
+          <button
+            @click="accountStore.toggleFavorite(product.id)"
+            class="absolute top-4 right-4 w-11 h-11 rounded-full bg-white/90 dark:bg-surface-card-dark/90 backdrop-blur-md border border-primary/30 shadow-lg flex items-center justify-center text-xl transition-transform hover:scale-110 active:scale-95 cursor-pointer"
+            :title="accountStore.isFavorite(product.id) ? 'Remove from favorites' : 'Add to favorites'"
+          >
+            <span v-if="accountStore.isFavorite(product.id)" class="text-red-500">❤️</span>
+            <span v-else class="text-gray-400 hover:text-red-400">🤍</span>
+          </button>
         </div>
         <!-- Thumbnails -->
         <div v-if="product.images.length > 1" class="flex gap-3 overflow-x-auto pb-2">
@@ -121,34 +132,38 @@ onMounted(async () => {
       </div>
 
       <!-- Product Info -->
-      <div class="lg:w-1/2">
-        <!-- Category -->
-        <p class="text-sm font-medium text-primary uppercase tracking-wider mb-2">{{ product.category }}</p>
-        <!-- Title -->
-        <h1 class="text-3xl sm:text-4xl font-extrabold text-text dark:text-text-dark mb-3">{{ product.title }}</h1>
-        <!-- Brand -->
-        <p v-if="product.brand" class="text-text-muted dark:text-text-muted-dark mb-4">
-          by <span class="font-semibold text-text dark:text-text-dark">{{ product.brand }}</span>
-        </p>
-        <!-- Rating -->
-        <div class="flex items-center gap-2 mb-6">
-          <div class="flex">
-            <span
-              v-for="i in 5" :key="i"
-              class="text-lg"
-              :class="i <= ratingStars ? 'text-amber-500' : 'text-border dark:text-border-dark'"
-            >★</span>
+      <div class="lg:w-1/2 flex flex-col justify-between">
+        <div>
+          <!-- Category -->
+          <p class="text-sm font-bold text-primary uppercase tracking-wider mb-2">{{ product.category }}</p>
+          <!-- Title & Favorite Button -->
+          <div class="flex items-start justify-between gap-4 mb-3">
+            <h1 class="text-2xl sm:text-3xl font-extrabold text-text dark:text-text-dark leading-tight">{{ product.title }}</h1>
           </div>
-          <span class="text-text-muted dark:text-text-muted-dark font-medium">{{ product.rating.toFixed(1) }}</span>
-        </div>
-        <!-- Description -->
-        <p class="text-text-muted dark:text-text-muted-dark leading-relaxed mb-6">{{ product.description }}</p>
-        <!-- Price -->
-        <div class="flex items-end gap-3 mb-6">
-          <span class="text-4xl font-extrabold text-primary">${{ discountedPrice.toFixed(2) }}</span>
-          <span v-if="product.discountPercentage > 5" class="text-xl text-text-muted dark:text-text-muted-dark line-through">
-            ${{ product.price.toFixed(2) }}
-          </span>
+          <!-- Brand -->
+          <p v-if="product.brand" class="text-text-muted dark:text-text-muted-dark mb-4">
+            by <span class="font-semibold text-text dark:text-text-dark">{{ product.brand }}</span>
+          </p>
+          <!-- Rating -->
+          <div class="flex items-center gap-2 mb-6">
+            <div class="flex">
+              <span
+                v-for="i in 5" :key="i"
+                class="text-lg"
+                :class="i <= ratingStars ? 'text-amber-500' : 'text-border dark:text-border-dark'"
+              >★</span>
+            </div>
+            <span class="text-text-muted dark:text-text-muted-dark font-medium">{{ product.rating.toFixed(1) }}</span>
+          </div>
+          <!-- Description -->
+          <p class="text-text-muted dark:text-text-muted-dark leading-relaxed mb-6">{{ product.description }}</p>
+          <!-- Price -->
+          <div class="flex items-end gap-3 mb-6">
+            <span class="text-4xl font-extrabold text-primary">{{ accountStore.formatPrice(discountedPrice) }}</span>
+            <span v-if="product.discountPercentage > 5" class="text-xl text-text-muted dark:text-text-muted-dark line-through">
+              {{ accountStore.formatPrice(product.price) }}
+            </span>
+          </div>
         </div>
         <!-- Stock -->
         <div class="flex items-center gap-2 mb-6">
@@ -191,7 +206,7 @@ onMounted(async () => {
             <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z"/>
             </svg>
-            Add to Cart — ${{ discountedPrice.toFixed(2) }}
+            Add to Cart — {{ accountStore.formatPrice(discountedPrice) }}
           </span>
         </button>
       </div>

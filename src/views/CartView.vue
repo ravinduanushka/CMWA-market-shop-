@@ -2,8 +2,10 @@
 import { computed } from 'vue'
 import { RouterLink } from 'vue-router'
 import { useCartStore } from '../stores/cart'
+import { useAccountStore } from '../stores/account'
 
 const cartStore = useCartStore()
+const accountStore = useAccountStore()
 
 const isEmpty = computed(() => cartStore.items.length === 0)
 
@@ -60,9 +62,9 @@ function getDiscountedPrice(price: number, discount: number): number {
             </RouterLink>
             <p class="text-sm text-text-muted dark:text-text-muted-dark capitalize mt-1">{{ item.product.category }}</p>
             <p class="text-lg font-bold text-primary mt-2">
-              ${{ getDiscountedPrice(item.product.price, item.product.discountPercentage).toFixed(2) }}
+              {{ accountStore.formatPrice(getDiscountedPrice(item.product.price, item.product.discountPercentage)) }}
               <span v-if="item.product.discountPercentage > 5" class="text-sm text-text-muted dark:text-text-muted-dark line-through font-normal ml-1">
-                ${{ item.product.price.toFixed(2) }}
+                {{ accountStore.formatPrice(item.product.price) }}
               </span>
             </p>
           </div>
@@ -104,7 +106,7 @@ function getDiscountedPrice(price: number, discount: number): number {
         <div class="space-y-3 mb-4">
           <div class="flex justify-between text-text-muted dark:text-text-muted-dark">
             <span>Items ({{ cartStore.totalItems }})</span>
-            <span>${{ cartStore.totalPrice.toFixed(2) }}</span>
+            <span>{{ accountStore.formatPrice(cartStore.totalPrice) }}</span>
           </div>
           <div class="flex justify-between text-text-muted dark:text-text-muted-dark">
             <span>Shipping</span>
@@ -112,7 +114,7 @@ function getDiscountedPrice(price: number, discount: number): number {
           </div>
           <div class="border-t border-border dark:border-border-dark pt-3 flex justify-between">
             <span class="text-lg font-bold text-text dark:text-text-dark">Total</span>
-            <span class="text-lg font-bold text-primary">${{ cartStore.totalPrice.toFixed(2) }}</span>
+            <span class="text-lg font-bold text-primary">{{ accountStore.formatPrice(cartStore.totalPrice) }}</span>
           </div>
         </div>
         

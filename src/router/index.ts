@@ -48,6 +48,11 @@ const routes: RouteRecordRaw[] = [
         name: 'about',
         component: () => import('../views/AboutView.vue'),
     },
+    {
+        path: '/account',
+        name: 'account',
+        component: () => import('../views/AccountView.vue'),
+    },
 ]
 
 const router = createRouter({

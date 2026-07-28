@@ -2,8 +2,10 @@
 import { ref, computed } from 'vue'
 import { RouterLink, useRouter } from 'vue-router'
 import { useCartStore } from '../stores/cart'
+import { useAccountStore } from '../stores/account'
 
 const cartStore = useCartStore()
+const accountStore = useAccountStore()
 const router = useRouter()
 
 const cardHolder = ref('')
@@ -167,7 +169,7 @@ function returnToHome() {
           >
             <span v-if="isProcessing" class="animate-spin w-5 h-5 border-2 border-white border-t-transparent rounded-full"></span>
             <span v-else>
-              Pay ${{ cartStore.totalPrice.toFixed(2) }} Now 
+              Pay {{ accountStore.formatPrice(cartStore.totalPrice) }} Now 
             </span>
           </button>
         </form>

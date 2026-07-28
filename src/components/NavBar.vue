@@ -37,22 +37,25 @@ function toggleMobileMenu() {
           <CartIcon />
           <!-- Login / User -->
           <template v-if="authStore.isLoggedIn">
-            <div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 dark:bg-primary/20">
+            <RouterLink
+              to="/account"
+              class="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary/10 dark:bg-primary/20 hover:bg-primary/20 transition-all cursor-pointer"
+            >
               <img
                 :src="authStore.user?.image"
                 :alt="authStore.displayName"
                 class="w-7 h-7 rounded-full object-cover ring-2 ring-primary"
               />
-              <span class="text-sm font-medium text-text dark:text-text-dark">{{ authStore.user?.firstName }}</span>
-            </div>
-            <button
-              @click="authStore.logout()"
-              class="text-sm font-medium text-text-muted dark:text-text-muted-dark hover:text-primary transition-colors cursor-pointer"
-            >
-              Logout
-            </button>
+              <span class="text-sm font-bold text-text dark:text-text-dark">My Account</span>
+            </RouterLink>
           </template>
           <div v-else class="flex items-center gap-3">
+            <RouterLink
+              to="/account"
+              class="text-sm font-semibold text-text dark:text-text-dark hover:text-primary transition-colors px-3 py-1.5 rounded-full hover:bg-primary/10"
+            >
+              My Account
+            </RouterLink>
             <RouterLink
               to="/login"
               class="flex items-center gap-1.5 px-4 py-2 rounded-full bg-primary text-white font-medium text-sm hover:bg-primary-dark transition-colors duration-200"
@@ -91,6 +94,13 @@ function toggleMobileMenu() {
     <transition name="fade">
       <div v-if="mobileMenuOpen" class="md:hidden border-t border-border dark:border-border-dark px-4 py-4 space-y-3 bg-surface/95 dark:bg-surface-dark/95 backdrop-blur-xl">
         <SearchBar @searched="mobileMenuOpen = false" />
+        <RouterLink
+          to="/account"
+          @click="mobileMenuOpen = false"
+          class="block text-center px-4 py-2 rounded-xl text-text dark:text-text-dark font-semibold text-sm hover:text-primary transition-colors border border-border/40"
+        >
+          👤 My Account
+        </RouterLink>
         <RouterLink
           to="/about"
           @click="mobileMenuOpen = false"
