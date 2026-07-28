@@ -1,18 +1,18 @@
-# 🛒 CMWA Marketing Store
+#  CMWA Marketing Store
 
 A modern, high-performance, full-featured e-commerce web application built with **Vue 3**, **TypeScript**, **Pinia**, **Vue Router**, and **Tailwind CSS v4**, powered by the **DummyJSON API**.
 
-🌐 **Live Demo / Deployment URL:** [https://cmwa-market-shop.vercel.app/](https://cmwa-market-shop.vercel.app/)
+ **Live Demo / Deployment URL:** [https://cmwa-market-shop.vercel.app/](https://cmwa-market-shop.vercel.app/)
 
 ---
 
-## 📌 Project Overview
+##  Project Overview
 
 **CMWA Marketing Store** is a state-of-the-art e-commerce web application engineered for an exceptional shopping experience. Featuring a warm sand color aesthetic (`#E3DAC9`), crisp card containers, dynamic currency conversion (`$ USD` / `Rs. LKR`), multi-language settings, interactive favorites management, and fluid animations.
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 - **Frontend Framework:** [Vue 3](https://vuejs.org/) (Composition API & `<script setup>`)
 - **Language:** [TypeScript](https://www.typescriptlang.org/)
@@ -25,14 +25,14 @@ A modern, high-performance, full-featured e-commerce web application built with 
 
 ---
 
-## ✨ Key Features & Highlights
+##  Key Features & Highlights
 
-### 1. 🛍️ Product Discovery & Comprehensive Search
+### 1.  Product Discovery & Comprehensive Search
 - **Multi-Field Smart Search:** Searches across Title, Description, Category, Brand, and Tags simultaneously.
 - **Category Filtering & Sorting:** Instant category filter pills with responsive horizontal layout.
 - **Dynamic Currency Formatting:** Prices automatically adjust based on selected currency (`$ USD` or `Rs. LKR`).
 
-### 2. 👤 "My Account" Page (`/account`)
+### 2.  "My Account" Page (`/account`)
 - **Profile Information:** Displays user First Name, Last Name, and Registered Email Address in elegant rounded rectangle cards.
 - **Staggered Entrance Animation:** Cards glide in from the left and right sides to align perfectly in the center upon page load.
 - **Interactive Cursor Hover Effects:** Cards scale up smoothly (`hover:scale-[1.03]`) with border glow transitions on hover.
@@ -42,35 +42,35 @@ A modern, high-performance, full-featured e-commerce web application built with 
 - **My Favourites:** View favorited products saved via the Product Detail page, with individual item remove buttons (`✕`) and a "Clear All Favourites" action.
 - **Account Logout:** Secure sign-out action card.
 
-### 3. 🎨 Hero Banner & Sequential Letter Wave Animation
+### 3.  Hero Banner & Sequential Letter Wave Animation
 - **Hero Title Animation:** Sequential letter-by-letter wave scale pulse (`"WELCOME TO CMWA MARKETING STORE"`) running once on page load.
 - **Responsive Layout:** Automatically scales and wraps on mobile, tablet, laptop, and PC displays.
 
-### 4. 🧭 Balanced Header Navigation (`NavBar.vue`)
+### 4.  Balanced Header Navigation (`NavBar.vue`)
 - **Left Corner:** Store logo (`🛒 CMWA MARKETING STORE`).
 - **Center:** Search bar centered in the middle.
 - **Right Corner:** 5 main features (**Theme Toggle**, **Cart Icon**, **Login**, **My Account**, **About Us**).
 - **Responsive Mobile Menu:** Clean dropdown menu with full-width pill buttons for mobile phones and tablets.
 
-### 5. ℹ️ "About Us" Page (`/about`)
+### 5. ℹ "About Us" Page (`/about`)
 - **Typewriter Animation:** Smooth forward-only typewriter animation loop for the store description.
 - **Contact Us Grid:** Rounded rectangle contact cards with hover scale effects.
 
-### 6. 💳 Shopping Cart & Dual Checkout Options
+### 6.  Shopping Cart & Dual Checkout Options
 - **Cart Management:** Add to cart, adjust quantities, remove items, clear cart, and real-time total computation.
 - **Cash on Delivery (COD):** Dedicated Cash on Delivery checkout page (`/checkout/cod`).
 - **Online Payment:** Dedicated Online Card Payment checkout page (`/checkout/online`).
 
 ---
 
-## 🌐 Deployment URL
+##  Deployment URL
 
 The application is live and accessible at:
-👉 **[https://cmwa-market-shop.vercel.app/](https://cmwa-market-shop.vercel.app/)**
+ **[https://cmwa-market-shop.vercel.app/](https://cmwa-market-shop.vercel.app/)**
 
 ---
 
-## 💻 Local Setup and Run Instructions
+##  Local Setup and Run Instructions
 
 ### Prerequisites
 - **Node.js**: `v18.0.0` or higher
@@ -99,7 +99,7 @@ Application local address: `http://localhost:5173`
 
 ---
 
-## 🏗️ Production Build & Verification
+##  Production Build & Verification
 
 To build for production:
 
@@ -115,7 +115,7 @@ npm run preview
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```text
 anushkas-assignment/
@@ -137,6 +137,6 @@ anushkas-assignment/
 
 ---
 
-## 📄 License
+##  License
 
 This project is open-source and available under the [MIT License](LICENSE).
