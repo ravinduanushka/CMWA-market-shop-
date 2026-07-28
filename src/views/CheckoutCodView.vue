@@ -115,7 +115,7 @@ function returnToHome() {
                 v-model="phone"
                 type="tel"
                 required
-                placeholder="+94 77 123 4567"
+                placeholder="+94 77 123 2789"
                 class="w-full px-4 py-3 rounded-xl bg-surface-card dark:bg-surface-card-dark border-2 border-primary/30 dark:border-border-dark text-sm text-text dark:text-text-dark focus:outline-none focus:border-primary shadow-sm"
               />
             </div>
